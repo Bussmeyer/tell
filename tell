@@ -82,7 +82,7 @@ function install_ansible_roles {
 
 function run_ansible_playbook {
     setStatusMessage "Running the ansible playbook for your lovely macbook."
-    #ansible-playbook main.yml -i inventory -K
+    ansible-playbook main.yml -i inventory -K
 }
 
 
