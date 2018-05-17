@@ -2,12 +2,20 @@
 
 - src: https://github.com/Bussmeyer/ansible-role-dotfiles
   name: bussmeyer.dotfiles
+  version: "master"
 
 - src: https://github.com/elliotweiser/ansible-osx-command-line-tools
   name: elliotweiser.osx-command-line-tools
+  version: "2.0.1"
 
-- src: https://github.com/geerlingguy/ansible-role-homebrew.git
+- src: https://github.com/geerlingguy/ansible-role-homebrew
   name: geerlingguy.homebrew
+  version: "2.4.1"
 
-- src: https://github.com/viasite-ansible/ansible-role-zsh.git
+- src: https://github.com/michaelrigart/ansible-role-hosts
+  name: michaelrigart.hosts
+  version: "master"
+
+- src: https://github.com/viasite-ansible/ansible-role-zsh
   name: viasite-ansible.zsh
+  version: "v3.2.1"
