@@ -34,6 +34,7 @@
       - postman
       - sequel-pro
       - sourcetree
+      - vagrant
       - virtualbox
       - wireshark
       # install quick look plugins for all users
