@@ -47,6 +47,7 @@
       - webpquicklook
       - suspicious-package
     homebrew_installed_packages:
+      - composer
       - coreutils
       - docker
       - docker-compose
