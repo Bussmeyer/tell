@@ -150,4 +150,3 @@
         dest: ~/.zshrc.local
       tags:
         - dotfiles
-
