@@ -67,6 +67,42 @@
       - wget
       - zsh
       - zsh-completions
+    osx_defaults:
+      - domain: 'com.apple.screencapture'
+        key: 'type'
+        type: string
+        value: png
+      - domain: 'com.apple.desktopservices' # http://www.defaults-write.com/disable-the-creation-of-ds_store-files/
+        key: 'DSDontWriteNetworkStores'
+        type: boolean
+        value: true
+      - domain: 'com.apple.print.PrintingPrefs' # Automatically quit printer app once the print jobs complete
+        key: 'Quit When Finished'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'IncludeInternalDebugMenu'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'IncludeDevelopMenu'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'WebKitDeveloperExtrasEnabledPreferenceKey'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'WebKitDeveloperExtras'
+        type: boolean
+        value: true
   tasks:
     - name: create ~/Projects directory
       file: path=~/Projects state=directory
+    - name: set mac defaults
+      osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
+      with_items: "{{ osx_defaults }}"
