@@ -116,6 +116,13 @@
       - git-flow
       - nvm
       - { name: osx, when: "{{ ansible_os_family == 'Darwin' }}" }
+    projects:
+      - group: mwide-nrw
+        name: mwide-nrw-startercenter
+        repo: git@git.pixelpark.com:MWIDE-NRW/mwide-nrw-startercenter.git
+      - group: dummy
+        name: horst
+        repo: git@git.pixelpark.com:MWIDE-NRW/mwide-nrw-startercenter.git
 
   tasks:
     - name: set mac defaults
@@ -156,15 +163,17 @@
       file: path=~/Projects state=directory
       tags:
         - projects
-    - name: create client group mwide-nrw
-      file: path=~/Projects/mwide-nrw state=directory
+    - name: create a directory for each client
+      file: path=~/Projects/{{ item.group }} state=directory
+      with_items: "{{ projects }}"
       tags:
         - projects
-    - name: git clone mwide-nrw-startercenter
+    - name: clone client projects
       git:
-        repo: 'git@git.pixelpark.com:MWIDE-NRW/mwide-nrw-startercenter.git'
-        dest: ~/Projects/mwide-nrw/mwide-nrw-startercenter
+        repo: "{{ item.repo }}"
+        dest: ~/Projects/{{ item.group }}/{{ item.name}}
         version: develop
         update: no
+      with_items: "{{ projects }}"
       tags:
         - projects
