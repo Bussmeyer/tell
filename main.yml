@@ -4,14 +4,63 @@
 
   roles:
     - geerlingguy.homebrew
-      tags: ['homebrew']
     - { role: viasite-ansible.zsh }
 
   vars:
+    homebrew_taps:
+      - homebrew/core
+      - caskroom/cask
+      - caskroom/versions
+      - codekitchen/dinghy
     homebrew_cask_apps:
+      # install applications for all users
       - box-sync
       - drawio
       - firefox
       - microsoft-lync
       - microsoft-teams
       - yed
+      # developer apps
+      - docker
+      - kitematic
+      - imagealpha
+      - imageoptim
+      - macdown
+      - phpstorm
+      - postman
+      - sequel-pro
+      - sourcetree
+      - virtualbox
+      - wireshark
+      # install quick look plugins for all users
+      - qlcolorcode
+      - qlstephen
+      - qlmarkdown
+      - quicklook-json
+      - qlprettypatch
+      - quicklook-csv
+      - betterzipql
+      - qlimagesize
+      - webpquicklook
+      - suspicious-package
+    homebrew_installed_packages:
+      - coreutils
+      - docker
+      - docker-compose
+      - docker-machine
+      - docker-machine-driver-xhyve
+      - dinghy
+      - findutils
+      - fzf
+      - git
+      - git-extras
+      - htop
+      - moreutils
+      - nvm
+      - python
+      - rbenv
+      - rsync
+      - sqlmap
+      - wget
+      - zsh
+      - zsh-completions
