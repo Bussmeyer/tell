@@ -3,4 +3,15 @@
   connection: local
 
   roles:
+    - geerlingguy.homebrew
+      tags: ['homebrew']
     - { role: viasite-ansible.zsh }
+
+  vars:
+    homebrew_cask_apps:
+      - box-sync
+      - drawio
+      - firefox
+      - microsoft-lync
+      - microsoft-teams
+      - yed

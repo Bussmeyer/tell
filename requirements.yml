@@ -1,4 +1,10 @@
 ---
 
+- src: https://github.com/elliotweiser/ansible-osx-command-line-tools
+  name: elliotweiser.osx-command-line-tools
+
+- src: https://github.com/geerlingguy/ansible-role-homebrew.git
+  name: geerlingguy.homebrew
+
 - src: https://github.com/viasite-ansible/ansible-role-zsh.git
   name: viasite-ansible.zsh
