@@ -63,6 +63,7 @@
       - rbenv
       - rsync
       - sqlmap
+      - tree
       - wget
       - zsh
       - zsh-completions
