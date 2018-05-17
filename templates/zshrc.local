@@ -1,0 +1,7 @@
+# {{ ansible_managed }}
+# https://stackoverflow.com/questions/27651892/homebrew-installs-nvm-but-nvm-cant-be-found-afterwards
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+eval "$(rbenv init -)"
