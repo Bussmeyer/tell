@@ -77,6 +77,7 @@
       - sqlmap
       - tree
       - wget
+      - yarn
       - zsh
       - zsh-completions
     osx_defaults:
