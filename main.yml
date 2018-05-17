@@ -118,8 +118,6 @@
       - { name: osx, when: "{{ ansible_os_family == 'Darwin' }}" }
 
   tasks:
-    - name: create ~/Projects directory
-      file: path=~/Projects state=directory
     - name: set mac defaults
       osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
       with_items: "{{ osx_defaults }}"
@@ -154,3 +152,19 @@
         # Ansible 2.4 supports `global_command` making `working_dir` optional.
         working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
       with_items: "{{ composer_packages }}"
+    - name: create ~/Projects directory
+      file: path=~/Projects state=directory
+      tags:
+        - projects
+    - name: create client group mwide-nrw
+      file: path=~/Projects/mwide-nrw state=directory
+      tags:
+        - projects
+    - name: git clone mwide-nrw-startercenter
+      git:
+        repo: 'git@git.pixelpark.com:MWIDE-NRW/mwide-nrw-startercenter.git'
+        dest: ~/Projects/mwide-nrw/mwide-nrw-startercenter
+        version: develop
+        update: no
+      tags:
+        - projects
