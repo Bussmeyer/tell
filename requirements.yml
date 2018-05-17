@@ -1,5 +1,8 @@
 ---
 
+- src: https://github.com/Bussmeyer/ansible-role-dotfiles
+  name: bussmeyer.dotfiles
+
 - src: https://github.com/elliotweiser/ansible-osx-command-line-tools
   name: elliotweiser.osx-command-line-tools
 

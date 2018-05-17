@@ -3,6 +3,7 @@
   connection: local
 
   roles:
+    - bussmeyer.dotfiles
     - geerlingguy.homebrew
     - { role: viasite-ansible.zsh }
 
