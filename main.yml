@@ -20,6 +20,7 @@
       - firefox
       - microsoft-lync
       - microsoft-teams
+      - vlc
       - yed
       # developer apps
       - docker
