@@ -35,16 +35,6 @@ function install_ansible {
     fi
 }
 
-function check_for_sudo {
-    setStatusMessage "Checking if we need to ask for a sudo password"
-
-    sudo -v
-    export ANSIBLE_ASK_SUDO_PASS=True
-
-    setStatusMessage "Keep-alive: update existing sudo time stamp until we are finished"
-    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-}
-
 function install_ansible_roles {
     setStatusMessage "Get all the required roles"
     ansible-galaxy install -f -r requirements.yml
@@ -55,7 +45,6 @@ function run_ansible_playbook {
     ansible-playbook main.yml -i inventory -K
 }
 
-check_for_sudo
 install_ansible
 install_ansible_roles
 run_ansible_playbook
