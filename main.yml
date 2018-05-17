@@ -8,6 +8,10 @@
     - viasite-ansible.zsh
 
   vars:
+    composer_packages:
+      - name: hirak/prestissimo
+      - name: drush/drush
+        version: '^8.1'
     homebrew_taps:
       - homebrew/core
       - caskroom/cask
@@ -150,3 +154,10 @@
         dest: ~/.zshrc.local
       tags:
         - dotfiles
+    - name: Install global Composer packages.
+      composer:
+        command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
+        arguments: "{{ item.name | default(item) }} {{ item.version | default('@stable') }}"
+        # Ansible 2.4 supports `global_command` making `working_dir` optional.
+        working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
+      with_items: "{{ composer_packages }}"
