@@ -64,3 +64,6 @@
       - wget
       - zsh
       - zsh-completions
+  tasks:
+    - name: create ~/Projects directory
+      file: path=~/Projects state=directory
