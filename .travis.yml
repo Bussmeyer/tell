@@ -21,4 +21,4 @@ install:
 
 script:
   # Test the Tell.
-  - "travis_wait 30 tell"
+  - "travis_wait 30 ./tell"
