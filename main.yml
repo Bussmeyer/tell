@@ -118,13 +118,6 @@
       - git-flow
       - nvm
       - { name: osx, when: "{{ ansible_os_family == 'Darwin' }}" }
-    projects:
-      - group: mwide-nrw
-        name: mwide-nrw-startercenter
-        repo: git@git.pixelpark.com:MWIDE-NRW/mwide-nrw-startercenter.git
-      - group: dummy
-        name: horst
-        repo: git@git.pixelpark.com:MWIDE-NRW/mwide-nrw-startercenter.git
 
   tasks:
     - name: set mac defaults
@@ -165,6 +158,18 @@
       with_items: "{{ composer_packages }}"
       tags:
         - composer
+    - name: Include default variables
+      include_vars: defaults/main.yml
+      tags:
+        - projects
+    - name: Load your projects
+      include_vars: "{{ item }}"
+      with_first_found:
+        - files:
+            - projects.yml
+          skip: true
+      tags:
+        - projects
     - name: create ~/Projects directory
       file: path=~/Projects state=directory
       tags:
