@@ -22,4 +22,4 @@ install:
 
 script:
   # Test the Tell.
-  - ./tell
+  - sudo ./tell
