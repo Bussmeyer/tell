@@ -1,9 +1,8 @@
 ---
 os:
   - osx
-language: objective-c
-# 10.13 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
-osx_image: xcode9.2
+    osx_image: xcode9.2
+language: generic
 
 before_install:
   # Uninstall existing Homebrew installation.
@@ -20,6 +19,15 @@ install:
   - sudo touch /etc/ansible/hosts
   - "echo -e '[local]\nlocalhost ansible_connection=local' | sudo tee -a /etc/ansible/hosts > /dev/null"
 
+  - sudo pip install nose tornado
+  - curl https://bootstrap.pypa.io/get-pip.py | sudo python
+
+  - pip install --upgrade setuptools --user python
+  - sudo pip install -q ansible
+
 script:
-  # Test the Tell.
-  - sudo ./tell
+  # Install dependencies.
+  - "ansible-galaxy install -f -r requirements.yml"
+
+  # Check the role/playbook's syntax.
+  - "ansible-playbook main.yml --syntax-check"
