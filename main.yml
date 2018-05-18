@@ -12,6 +12,7 @@
       - name: hirak/prestissimo
       - name: drush/drush
         version: '^8.1'
+      - name: squizlabs/php_codesniffer
     homebrew_taps:
       - homebrew/core
       - caskroom/cask
