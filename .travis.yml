@@ -18,7 +18,7 @@ install:
   - sudo easy_install pip
 
   # Install Ansible.
-  - sudo pip install ansible
+  - sudo -H pip install ansible
 
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
@@ -30,7 +30,10 @@ install:
 
 script:
   # Install dependencies.
-  - "ansible-galaxy install -r requirements.yml"
+  - "ansible-galaxy install -f -r requirements.yml"
 
   # Check the role/playbook's syntax.
   - "ansible-playbook main.yml --syntax-check"
+
+  # Test the playbook
+  - "ansible-playbook main.yml"
