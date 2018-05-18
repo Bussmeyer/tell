@@ -18,6 +18,9 @@ function exists {
 }
 
 function install_ansible {
+    setStatusMessage "Update pip"
+    curl https://bootstrap.pypa.io/get-pip.py | sudo python
+
     if ! exists pip; then
         setStatusMessage "Install PIP"
         sudo easy_install --quiet pip nose tornado
