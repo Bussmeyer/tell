@@ -130,25 +130,27 @@
     - name: set mac defaults
       osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
       with_items: "{{ osx_defaults }}"
+      tags:
+        - osx
     - name: create /usr/local/powerline directory
       file: path=/usr/local/powerline state=directory
       tags:
-        - powerline
+        - shell
     - name: git clone Powerline fonts repository
       git: repo='https://github.com/powerline/fonts.git' dest=/usr/local/powerline/fonts
       tags:
-        - powerline
+        - shell
     - name: install Powerline fonts
       command: ./install.sh
       args:
         chdir: /usr/local/powerline/fonts/
       tags:
-        - powerline
+        - shell
     - name: cleanup Powerline fonts installation
       file: path=/usr/local/powerline/fonts state=absent
       tags:
-        - powerline
-    - name: .zshrc.local
+        - shell
+    - name: ".zshrc.local"
       template:
         src: templates/zshrc.local
         dest: ~/.zshrc.local
@@ -161,6 +163,8 @@
         # Ansible 2.4 supports `global_command` making `working_dir` optional.
         working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
       with_items: "{{ composer_packages }}"
+      tags:
+        - composer
     - name: create ~/Projects directory
       file: path=~/Projects state=directory
       tags:
