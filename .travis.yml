@@ -12,3 +12,8 @@ before_install:
   - sudo rm -rf /usr/local/Homebrew
   - sudo rm -rf /usr/local/Caskroom
   - sudo rm -rf /usr/local/bin/brew
+
+install:
+  # Add a hosts file.
+  - sudo touch /etc/ansible/hosts
+  - "echo -e '[local]\nlocalhost ansible_connection=local' | sudo tee -a /etc/ansible/hosts > /dev/null"
