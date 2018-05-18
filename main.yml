@@ -5,7 +5,7 @@
   roles:
     - bussmeyer.dotfiles
     - geerlingguy.homebrew
-    #- viasite-ansible.zsh
+    - viasite-ansible.zsh
 
   vars:
     composer_packages:
