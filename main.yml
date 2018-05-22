@@ -80,6 +80,9 @@
       - yarn
       - zsh
       - zsh-completions
+    gem_packages:
+      - name: docker-sync
+        state: latest
     osx_defaults:
       - domain: 'com.apple.screencapture'
         key: 'type'
@@ -159,6 +162,16 @@
       with_items: "{{ composer_packages }}"
       tags:
         - composer
+    - name: Install global Ruby gems.
+      gem:
+        name: "{{ item.name | default(item) }}"
+        state: "{{ item.state | default('present') }}"
+        version: "{{ item.version | default(omit) }}"
+        user_install: no
+        executable: "{{ item.executable | default(omit) }}"
+      with_items: "{{ gem_packages }}"
+      tags:
+        - gems
     - name: Include default variables
       include_vars: defaults/main.yml
       tags:
