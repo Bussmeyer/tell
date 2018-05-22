@@ -69,6 +69,7 @@
       - git-extras
       - htop
       - moreutils
+      - mysql
       - nvm
       - python
       - rbenv
