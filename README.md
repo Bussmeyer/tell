@@ -12,6 +12,21 @@ This playbook installs and configures most of the software we use on our Macbook
 1. Clone this repository to your local drive.
 1. Run `$ ./tell` inside this directory.
 
+## Add your projects
+1. Add a file named projects.yml in the root of this project
+1. Insert something like this:
+
+```
+---
+projects:
+  - group: companyname
+    name: styleguide
+    repo: git@git.pixelpark.com:companyname/styleguide.git
+  - group: acme
+    name: cms
+    repo: git@git.pixelpark.com:acme/cms.git
+```
+
 ## Manual tasks and known bugs
 ### Permission error while installing zsh
 ```
