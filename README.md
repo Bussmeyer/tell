@@ -21,10 +21,10 @@ This playbook installs and configures most of the software we use on our Macbook
 projects:
   - group: companyname
     name: styleguide
-    repo: git@git.pixelpark.com:companyname/styleguide.git
+    repo: git@git.domain.com:companyname/styleguide.git
   - group: acme
     name: cms
-    repo: git@git.pixelpark.com:acme/cms.git
+    repo: git@git.domain.com:acme/cms.git
 ```
 
 ## Manual tasks and known bugs
