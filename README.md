@@ -1,6 +1,4 @@
 # tell
-[![Build Status](https://travis-ci.org/pixelpark/tell.svg?branch=master)](https://travis-ci.org/pixelpark/tell)
-
 Tell is a light tool to ease the automated install of our Macbooks.
 
 This playbook installs and configures most of the software we use on our Macbooks for web and software development.
