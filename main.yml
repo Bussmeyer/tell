@@ -43,6 +43,7 @@
       - sublime-text
       - vagrant
       - virtualbox
+      - webstorm
       - wireshark
       # install quick look plugins for all users
       - qlcolorcode
