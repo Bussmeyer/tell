@@ -197,33 +197,7 @@
       with_items: "{{ npm_packages }}"
       tags:
         - npm
-    - name: Include default variables
-      include_vars: defaults/main.yml
-      tags:
-        - projects
-    - name: Load your projects
-      include_vars: "{{ item }}"
-      with_first_found:
-        - files:
-            - projects.yml
-          skip: true
-      tags:
-        - projects
     - name: create ~/Projects directory
       file: path=~/Projects state=directory
-      tags:
-        - projects
-    - name: create a directory for each client
-      file: path=~/Projects/{{ item.group }} state=directory
-      with_items: "{{ projects }}"
-      tags:
-        - projects
-    - name: clone client projects
-      git:
-        repo: "{{ item.repo }}"
-        dest: ~/Projects/{{ item.group }}/{{ item.name}}
-        version: develop
-        update: no
-      with_items: "{{ projects }}"
       tags:
         - projects
