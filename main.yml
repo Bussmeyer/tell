@@ -25,10 +25,18 @@
       - firefox
       - licecap
       - microsoft-teams
+      - the-unarchiver
       - vlc
       - yed
       # developer apps
+      - atom
+      - charles
+      - cyberduck
+      - db-browser-for-sqlite
       - docker
+      - filezilla
+      - forticlient
+      - keepassx
       - kitematic
       - imagealpha
       - imageoptim
@@ -36,12 +44,15 @@
       - iterm2
       - macdown
       - mamp
+      - pgadmin4
       - phpstorm
       - postman
       - sequel-pro
+      - sketch
       - sourcetree
       - sublime-text
       - vagrant
+      - vmware-fusion
       - virtualbox
       - webstorm
       - wireshark
