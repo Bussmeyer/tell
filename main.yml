@@ -68,6 +68,7 @@
       - fzf
       - git
       - git-extras
+      - gnu-tar
       - htop
       - moreutils
       - mysql
