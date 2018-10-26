@@ -144,22 +144,22 @@
       with_items: "{{ osx_defaults }}"
       tags:
         - osx
-    - name: create /usr/local/powerline directory
-      file: path=/usr/local/powerline state=directory
+    - name: create /tmp/powerline directory
+      file: path=/tmp/powerline state=directory
       tags:
         - shell
     - name: git clone Powerline fonts repository
-      git: repo='https://github.com/powerline/fonts.git' dest=/usr/local/powerline/fonts
+      git: repo='https://github.com/powerline/fonts.git' dest=/tmp/powerline
       tags:
         - shell
     - name: install Powerline fonts
       command: ./install.sh
       args:
-        chdir: /usr/local/powerline/fonts/
+        chdir: /tmp/powerline
       tags:
         - shell
     - name: cleanup Powerline fonts installation
-      file: path=/usr/local/powerline/fonts state=absent
+      file: path=/tmp/powerline state=absent
       tags:
         - shell
     - name: ".zshrc.local"
