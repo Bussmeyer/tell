@@ -23,6 +23,7 @@
       - google-backup-and-sync
       - box-sync
       - cisco-proximity
+      - disk-inventory-x
       - drawio
       - firefox
       - licecap
