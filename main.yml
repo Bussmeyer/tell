@@ -39,6 +39,8 @@
       - steam
       - the-unarchiver
       - vlc
+      - vox
+      - vox-preferences-pane
       - yed
       # developer apps
       - atom
