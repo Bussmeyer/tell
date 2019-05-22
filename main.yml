@@ -20,16 +20,17 @@
       - codekitchen/dinghy
     homebrew_cask_apps:
       # install applications for all users
-      - google-backup-and-sync
       - box-sync
       - cisco-proximity
       - disk-inventory-x
       - drawio
       - firefox
       - gimp
+      - google-backup-and-sync
       - keeweb
       - licecap
       - microsoft-teams
+      - musicbrainz-picard
       - owncloud
       - spectacle
       - the-unarchiver
