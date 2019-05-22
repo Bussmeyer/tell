@@ -42,6 +42,7 @@
       - vox
       - vox-preferences-pane
       - yed
+      - youtube-to-mp3
       # developer apps
       - atom
       - charles
