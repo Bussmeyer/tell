@@ -21,10 +21,12 @@
     homebrew_cask_apps:
       # install applications for all users
       - box-sync
+      - cisco-proximity
       - drawio
       - firefox
       - licecap
       - microsoft-teams
+      - spectacle
       - the-unarchiver
       - vlc
       - yed
