@@ -26,5 +26,8 @@ chsh -s /bin/zsh
 1. [Download FortiClient](https://www.fortinet.com/support-and-training/support/product-downloads.html)
 2. Install and configure the client with the help of a colleague
 
+### Install ttmp32gme
+[Download ttmp32gme](https://github.com/thawn/ttmp32gme)
+
 ## Kudos
 Originally inspired by [superlumic/superlumic](https://github.com/superlumic/superlumic) and [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
