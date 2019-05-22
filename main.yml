@@ -20,6 +20,7 @@
       - codekitchen/dinghy
     homebrew_cask_apps:
       # install applications for all users
+      - google-backup-and-sync
       - box-sync
       - cisco-proximity
       - drawio
