@@ -148,6 +148,8 @@
         key: 'WebKitDeveloperExtras'
         type: boolean
         value: true
+    dockitems_to_remove:
+      - Safari
     zsh_autosuggestions_bind_key: "^U"
     zsh_antigen_bundles_extras:
       - composer
@@ -159,6 +161,22 @@
     - name: set mac defaults
       osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
       with_items: "{{ osx_defaults }}"
+      tags:
+        - osx
+    - name: Remove all crap from Dock
+      shell: dockutil --remove '{{ item }}'
+      ignore_errors: true
+      with_items: dockitems_to_remove
+      tags:
+        - osx
+    - name: Check if items in dock exist
+      shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
+      with_items: dockitems_to_persist
+      tags:
+        - osx
+    - name: Fix order
+      shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
+      with_items: dockitems_to_persist
       tags:
         - osx
     - name: create /tmp/powerline directory
