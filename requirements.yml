@@ -10,7 +10,7 @@
 
 - src: https://github.com/geerlingguy/ansible-role-homebrew
   name: geerlingguy.homebrew
-  version: "2.6.1"
+  version: "2.9.0"
 
 - src: https://github.com/michaelrigart/ansible-role-hosts
   name: michaelrigart.hosts
