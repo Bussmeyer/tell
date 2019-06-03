@@ -170,6 +170,10 @@
         key: 'DateFormat'
         type: string
         value: "EEE MMM d  h:mm a"
+      - domain: 'com.apple.LaunchServices'
+        key: 'LSQuarantine'
+        type: bool
+        value: true
     dockitems_to_remove:
       - Microsoft Outlook
       - Microsoft Word
