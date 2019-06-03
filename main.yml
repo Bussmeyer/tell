@@ -197,6 +197,9 @@
       - name: iTerm
         path: "/Applications/iTerm.app"
         pos: 4
+      - name: Notes
+        path: "/Applications/Notes.app"
+        pos: 5
     zsh_autosuggestions_bind_key: "^U"
     zsh_antigen_bundles_extras:
       - composer
