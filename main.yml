@@ -200,6 +200,9 @@
       - name: Notes
         path: "/Applications/Notes.app"
         pos: 5
+      - name: Messages
+        path: "/Applications/Messages.app"
+        pos: 6
     zsh_autosuggestions_bind_key: "^U"
     zsh_antigen_bundles_extras:
       - composer
