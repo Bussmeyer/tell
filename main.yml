@@ -166,6 +166,10 @@
         key: 'tilesize'
         type: float
         value: 32
+      - domain: 'com.apple.menuextra.clock'
+        key: 'DateFormat'
+        type: string
+        value: "EEE MMM d  h:mm a"
     dockitems_to_remove:
       - Microsoft Outlook
       - Microsoft Word
@@ -274,3 +278,7 @@
       file: path=~/Projects state=directory
       tags:
         - projects
+    - name: Restart SystemUIServer e.g. show date in menu
+      command: killall SystemUIServer
+      tags:
+        - osx
