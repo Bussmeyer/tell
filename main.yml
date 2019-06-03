@@ -162,6 +162,10 @@
         key: 'launchanim'
         type: bool
         value: true
+      - domain: 'com.apple.dock'
+        key: 'tilesize'
+        type: float
+        value: 32
     dockitems_to_remove:
       - Microsoft Outlook
       - Microsoft Word
