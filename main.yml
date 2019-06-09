@@ -179,7 +179,7 @@
       - domain: 'com.apple.LaunchServices'
         key: 'LSQuarantine'
         type: bool
-        value: true
+        value: false
     dockitems_to_remove:
       - Microsoft Outlook
       - Microsoft Word
