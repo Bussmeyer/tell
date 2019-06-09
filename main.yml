@@ -170,6 +170,10 @@
         key: 'DateFormat'
         type: string
         value: "EEE MMM d  h:mm a"
+      - domain: 'com.apple.menuextra.battery'
+        key: 'ShowPercent'
+        type: string
+        value: "YES"
       - domain: 'com.apple.LaunchServices'
         key: 'LSQuarantine'
         type: bool
