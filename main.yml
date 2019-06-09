@@ -253,6 +253,12 @@
       file: path=/tmp/powerline state=absent
       tags:
         - shell
+    - name: Import iTerm2 settings, incl. fonts
+      copy:
+        src: templates/com.googlecode.iterm2.plist
+        dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+      tags:
+        - shell
     - name: ".zshrc.local"
       template:
         src: templates/zshrc.local
