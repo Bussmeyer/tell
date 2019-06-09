@@ -152,6 +152,10 @@
         key: 'AppleEnableMenuBarTransparency'
         type: boolean
         value: true
+      - domain: 'NSGlobalDomain'
+        key: 'NSNavPanelExpandedStateForSaveMode'
+        type: boolean
+        value: true
       - domain: 'com.apple.menuextra.battery'
         key: 'ShowPercent'
         type: string
