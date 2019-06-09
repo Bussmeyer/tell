@@ -230,7 +230,7 @@
       with_items: "{{ dockitems_to_persist }}"
       tags:
         - osx
-    - name: Fix order
+    - name: Fix order of items in dock
       shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
       with_items: "{{ dockitems_to_persist }}"
       tags:
