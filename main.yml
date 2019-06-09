@@ -8,6 +8,7 @@
     - viasite-ansible.zsh
 
   vars:
+    gem_packages: []
     composer_packages:
       - name: hirak/prestissimo
       - name: drush/drush
