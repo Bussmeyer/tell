@@ -19,14 +19,8 @@ sudo chgrp staff ~/.zshrc
 chsh -s /bin/zsh
 ```
 
-### Set your prefered font in your terminal
-@see https://github.com/viasite-ansible/ansible-role-zsh#configure-terminal-application
-
 ### Install ttmp32gme
 [Download ttmp32gme](https://github.com/thawn/ttmp32gme)
-
-### Install Fonts
-...
 
 ### Set up cloud drives
 - box-sync
