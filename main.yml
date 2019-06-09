@@ -108,9 +108,6 @@
       - yarn
       - zsh
       - zsh-completions
-    gem_packages:
-      - name: docker-sync
-        state: latest
     npm_packages:
       - name: grunt
     osx_defaults:
