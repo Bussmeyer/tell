@@ -210,6 +210,10 @@
         key: 'NSNavPanelExpandedStateForSaveMode'
         type: boolean
         value: true
+      - domain: 'com.apple.CrashReporter' # Disable the crash reporter (quit dialog after an application crash) (default: 'crashreport')
+        key: 'DialogType'
+        type: string
+        value: "none"
 
     dockitems_to_remove:
       - Microsoft Outlook
