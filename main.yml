@@ -126,7 +126,7 @@
       - domain: 'com.apple.menuextra.battery'
         key: 'ShowPercent'
         type: string
-        value: "NO"
+        value: "YES"
       - domain: 'com.apple.menuextra.battery'
         key: 'ShowTime'
         type: string
