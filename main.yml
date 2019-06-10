@@ -131,6 +131,17 @@
         key: 'ShowTime'
         type: string
         value: "NO"
+      - domain: 'com.apple.systemuiserver'
+        key: 'menuExtras'
+        type: array
+        value:
+          - "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
+          - "/System/Library/CoreServices/Menu Extras/AirPort.menu"
+          - "/System/Library/CoreServices/Menu Extras/Battery.menu"
+          - "/System/Library/CoreServices/Menu Extras/Clock.menu"
+          - "/System/Library/CoreServices/Menu Extras/User.menu"
+          - "/System/Library/CoreServices/Menu Extras/Volume.menu"
+
       - domain: 'com.googlecode.iterm2'
         key: 'PromptOnQuit'
         type: bool
