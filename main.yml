@@ -214,6 +214,18 @@
         key: 'DialogType'
         type: string
         value: "none"
+      - domain: 'NSGlobalDomain' # Disable automatic capitalization as it’s annoying when typing code
+        key: 'NSAutomaticCapitalizationEnabled'
+        type: bool
+        value: false
+      - domain: 'NSGlobalDomain' # Enable smart dashes as they’re annoying when typing code
+        key: 'NSAutomaticDashSubstitutionEnabled'
+        type: bool
+        value: true
+      - domain: 'NSGlobalDomain' # Disable automatic period substitution as it’s annoying when typing code
+        key: 'NSAutomaticPeriodSubstitutionEnabled'
+        type: bool
+        value: false
 
     dockitems_to_remove:
       - Microsoft Outlook
