@@ -146,20 +146,8 @@
         key: 'PromptOnQuit'
         type: bool
         value: false
-      - domain: 'com.apple.screencapture'
-        key: 'type'
-        type: string
-        value: png
-      - domain: 'com.apple.screencapture'
-        key: 'location'
-        type: string
-        value: "$HOME/Desktop"
       - domain: 'com.apple.desktopservices' # http://www.defaults-write.com/disable-the-creation-of-ds_store-files/
         key: 'DSDontWriteNetworkStores'
-        type: boolean
-        value: true
-      - domain: 'com.apple.print.PrintingPrefs' # Automatically quit printer app once the print jobs complete
-        key: 'Quit When Finished'
         type: boolean
         value: true
       - domain: 'com.apple.Safari'
@@ -182,14 +170,6 @@
         key: 'WebKitDeveloperExtras'
         type: boolean
         value: true
-      - domain: 'NSGlobalDomain'
-        key: 'NSNavPanelExpandedStateForSaveMode'
-        type: boolean
-        value: true
-      - domain: 'com.apple.LaunchServices'
-        key: 'LSQuarantine'
-        type: bool
-        value: false
       - domain: 'com.apple.finder'
         key: 'FXPreferredViewStyle'
         type: string
@@ -206,6 +186,31 @@
         key: 'tilesize'
         type: float
         value: 32
+
+      ###############################################################################
+      # General UI/UX                                                               #
+      ###############################################################################
+      - domain: 'com.apple.LaunchServices' # Turn off the 'Application Downloaded from Internet' quarantine warning
+        key: 'LSQuarantine'
+        type: bool
+        value: false
+      - domain: 'com.apple.screencapture'
+        key: 'type'
+        type: string
+        value: png
+      - domain: 'com.apple.screencapture'
+        key: 'location'
+        type: string
+        value: "$HOME/Desktop"
+      - domain: 'com.apple.print.PrintingPrefs' # Automatically quit printer app once the print jobs complete
+        key: 'Quit When Finished'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'NSNavPanelExpandedStateForSaveMode'
+        type: boolean
+        value: true
+
     dockitems_to_remove:
       - Microsoft Outlook
       - Microsoft Word
