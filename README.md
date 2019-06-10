@@ -30,4 +30,4 @@ chsh -s /bin/zsh
 
 ## Kudos
 Originally inspired by [superlumic/superlumic](https://github.com/superlumic/superlumic) and [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
-https://github.com/lafarer/ansible-role-osx-defaults for osx-defaults in a very structured way.
+https://github.com/lafarer/ansible-role-osx-defaults and https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe for osx-defaults in a very structured way.
