@@ -170,14 +170,6 @@
         key: 'WebKitDeveloperExtras'
         type: boolean
         value: true
-      - domain: 'com.apple.finder'
-        key: 'FXPreferredViewStyle'
-        type: string
-        value: "Nlsv"
-      - domain: 'com.apple.finder'
-        key: 'QLEnableTextSelection'
-        type: bool
-        value: true
       - domain: 'com.apple.dock'
         key: 'launchanim'
         type: bool
@@ -227,6 +219,21 @@
         type: bool
         value: false
 
+      ###############################################################################
+      # Finder                                                                      #
+      ###############################################################################
+      - domain: 'com.apple.finder'
+        key: 'FXPreferredViewStyle'
+        type: string
+        value: "Nlsv"
+      - domain: 'com.apple.finder'
+        key: 'QLEnableTextSelection'
+        type: bool
+        value: true
+      - domain: 'com.apple.finder' #Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+        key: 'QuitMenuItem'
+        type: bool
+        value: true
     dockitems_to_remove:
       - Microsoft Outlook
       - Microsoft Word
