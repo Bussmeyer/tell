@@ -215,6 +215,113 @@
         value: false
 
       ###############################################################################
+      # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+      ###############################################################################
+      # Enable Trackpad Gestures
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'Clicking'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'DragLock'
+        type: int
+        value: 0
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'Dragging'
+        type: int
+        value: 0
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadCornerSecondaryClick'
+        type: int
+        value: 0
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadFiveFingerPinchGesture'
+        type: int
+        value: 2
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadFourFingerHorizSwipeGesture'
+        type: int
+        value: 2
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadFourFingerPinchGesture'
+        type: int
+        value: 2
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadFourFingerVertSwipeGesture'
+        type: int
+        value: 2
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadHandResting'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadHorizScroll'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadMomentumScroll'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadPinch'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadRightClick'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadRotate'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadScroll'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadThreeFingerDrag'
+        type: int
+        value: 0
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadThreeFingerHorizSwipeGesture'
+        type: int
+        value: 2
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadThreeFingerTapGesture'
+        type: int
+        value: 0
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadThreeFingerVertSwipeGesture'
+        type: int
+        value: 2
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadTwoFingerDoubleTapGesture'
+        type: int
+        value: 1
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'TrackpadTwoFingerFromRightEdgeSwipeGesture'
+        type: int
+        value: 3
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'USBMouseStopsTrackpad'
+        type: int
+        value: 0
+      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+        key: 'UserPreferences'
+        type: int
+        value: 1
+      # Enable tap to click on trackpad
+      - domain: 'NSGlobalDomain'
+        key: 'com.apple.mouse.tapBehavior '
+        type: int
+        value: 1
+      # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
+      - domain: 'NSGlobalDomain'
+        key: 'AppleKeyboardUIMode'
+        type: int
+        value: 3
+
+      ###############################################################################
       # Finder                                                                      #
       ###############################################################################
       #  Use list view in all Finder windows by default
