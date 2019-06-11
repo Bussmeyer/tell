@@ -141,6 +141,7 @@
           - "/System/Library/CoreServices/Menu Extras/Clock.menu"
           - "/System/Library/CoreServices/Menu Extras/User.menu"
           - "/System/Library/CoreServices/Menu Extras/Volume.menu"
+
       ###############################################################################
       # to be clustered                                                             #
       ###############################################################################
@@ -216,16 +217,53 @@
       ###############################################################################
       # Finder                                                                      #
       ###############################################################################
+      #  Use list view in all Finder windows by default
+      # Four-letter codes for the other view modes: `clmv` (?), `icnv` (icon), `Nlsv` (list), `Flwv` (cover flow)
       - domain: 'com.apple.finder'
         key: 'FXPreferredViewStyle'
+        type: string
+        value: "Nlsv"
+      - domain: 'com.apple.finder'
+        key: 'SearchRecentsSavedViewStyle'
         type: string
         value: "Nlsv"
       - domain: 'com.apple.finder'
         key: 'QLEnableTextSelection'
         type: bool
         value: true
-      - domain: 'com.apple.finder' #Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
-        key: 'QuitMenuItem'
+      # Set Desktop as the default location for new Finder windows use `PfHm`
+      # For other paths, use `PfLo` and `file:///full/path/here/`
+      - domain: 'com.apple.finder'
+        key: 'NewWindowTarget'
+        type: string
+        value: "PfLo"
+      - domain: 'com.apple.finder'
+        key: 'NewWindowTargetPath'
+        type: string
+        value: "file:///Users/thobussm/"
+      # Show status bar
+      - domain: 'com.apple.finder'
+        key: 'ShowStatusBar'
+        type: bool
+        value: true
+      # Show path (breadcrumb) bar
+      - domain: 'com.apple.finder'
+        key: 'ShowPathbar'
+        type: bool
+        value: true
+      # Display full POSIX path as Finder window title
+      - domain: 'com.apple.finder'
+        key: '_FXShowPosixPathInTitle'
+        type: bool
+        value: true
+      # Show preview pane
+      - domain: 'com.apple.finder'
+        key: 'ShowPreviewPane'
+        type: bool
+        value: false
+      # Allowing text selection in Quick Look/Preview in Finder by default
+      - domain: 'com.apple.finder'
+        key: 'QLEnableTextSelection'
         type: bool
         value: true
       ###############################################################################
