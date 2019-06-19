@@ -21,6 +21,7 @@
       - codekitchen/dinghy
     homebrew_cask_apps:
       # install applications for all users
+      - adobe-acrobat-reader
       - box-sync
       - cisco-proximity
       - disk-inventory-x
