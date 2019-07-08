@@ -99,6 +99,7 @@
       - git-extras
       - gnu-tar
       - htop
+      - lzop
       - moreutils
       - mysql
       - nvm
