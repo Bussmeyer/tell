@@ -22,6 +22,7 @@
     homebrew_cask_apps:
       # install applications for all users
       - adobe-acrobat-reader
+      - azure-data-studio
       - box-sync
       - cisco-proximity
       - disk-inventory-x
