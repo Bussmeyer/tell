@@ -383,6 +383,40 @@
         key: 'QLEnableTextSelection'
         type: bool
         value: true
+      # if ask "When performing a search, search the current folder by default (the default 'This Mac' is 'SCev')" Y; then
+      #   defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+      # fi
+      #
+      # if ask "Disable the warning when changing a file extension" Y; then
+      #   defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+      # fi
+      #
+      # # if ask "Enable spring loading for directories" Y; then
+      #   # defaults write -g com.apple.springing.enabled -bool true
+      # # fi
+      #
+      # if ask "Remove the delay for spring loading for directories" Y; then
+      #   defaults write -g com.apple.springing.delay -float 0
+      # fi
+      #
+      # if ask "Disable creation of Metadata Files on USB Volumes (avoids creation of .DS_Store and AppleDouble files.)" Y; then
+      #   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+      # fi
+      # if ask "Empty Trash securely by default" Y; then
+      #   defaults write com.apple.finder EmptyTrashSecurely -bool true
+      # fi
+      #
+      # if ask "Show app-centric sidebar" Y; then
+      #   defaults write com.apple.finder FK_AppCentricShowSidebar -bool true
+      # fi
+      # if ask "Show the '~/Library' folder" Y; then
+      #   chflags nohidden ~/Library
+      # fi
+      #
+      # if ask "Show the '/Volumes' folder" Y; then
+      #   sudo chflags nohidden /Volumes
+      # fi
+
       ###############################################################################
       # Dock, Dashboard, and hot corners                                            #
       ###############################################################################
