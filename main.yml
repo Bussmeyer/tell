@@ -15,6 +15,7 @@
         version: '^8.1'
       - name: squizlabs/php_codesniffer
     homebrew_taps:
+      - azure/functions
       - homebrew/core
       - caskroom/cask
       - caskroom/versions
@@ -77,6 +78,7 @@
       - vmware-fusion
       - virtualbox
       - visual-studio
+      - visual-studio-code
       - webstorm
       - wireshark
       # install quick look plugins for all users
@@ -90,6 +92,7 @@
       - webpquicklook
       - suspicious-package
     homebrew_installed_packages:
+      - azure-functions-core-tools
       - composer
       - coreutils
       - docker
