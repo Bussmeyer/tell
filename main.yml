@@ -92,7 +92,6 @@
       - webpquicklook
       - suspicious-package
     homebrew_installed_packages:
-      - azure-functions-core-tools
       - composer
       - coreutils
       - docker
