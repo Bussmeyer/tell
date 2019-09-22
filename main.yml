@@ -223,6 +223,44 @@
         key: 'NSAutomaticPeriodSubstitutionEnabled'
         type: bool
         value: false
+      # Set the languages present
+      - domain: 'NSGlobalDomain'
+        key: 'NSLinguisticDataAssetsRequested'
+        type: array
+        value:
+          - "en"
+          - "de"
+      # defaults delete NSGlobalDomain NSNavRecentPlaces
+      # Set the some english acronyms/short forms for ease of typing
+      - domain: 'NSGlobalDomain'
+        key: 'NSUserDictionaryReplacementItems'
+        type: array
+        value:
+          - '{ on = 1; replace = cyl; with = "Cya later!"; }'
+          - '{ on = 1; replace = ttyl; with = "Talk to you later!"; }'
+          - '{ on = 1; replace = omw; with = "On my way!"; }'
+          - '{ on = 1; replace = omg; with = "Oh my God!"; }'
+
+      ###############################################################################
+      # Text Edit                                                                   #
+      ###############################################################################
+      # if ask "Use plain text mode for new TextEdit documents" Y; then
+      #   defaults write com.apple.TextEdit RichText -int 0
+      # fi
+      #
+      # if ask "Open and save files as UTF-8 in TextEdit" Y; then
+      #   defaults write com.apple.TextEdit PlainTextEncoding -int 4
+      #   defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+      # fi
+
+      ###############################################################################
+      # Audio                                                                       #
+      ###############################################################################
+      # Increase sound quality for Bluetooth headphones/headsets
+      - domain: 'com.apple.BluetoothAudioAgent'
+        key: 'Apple Bitpool Min (editable)'
+        type: int
+        value: 40
 
       ###############################################################################
       # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -491,6 +529,63 @@
         key: 'tilesize'
         type: float
         value: 32
+
+      ###############################################################################
+      # Safari & WebKit                                                             #
+      ###############################################################################
+      # if ask "Privacy: don’t send search queries to Apple" Y; then
+      #   defaults write com.apple.Safari UniversalSearchEnabled -bool false
+      #   defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+      # fi
+      #
+      # # if ask "Press Tab to highlight each item on a web page" N; then
+      # #   defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
+      # #   defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
+      # # fi
+      #
+      # if ask "Show the full URL in the address bar (note: this still hides the scheme)" Y; then
+      #   defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+      # fi
+      # if ask "Hide Safari’s bookmarks bar by default" Y; then
+      #   defaults write com.apple.Safari ShowFavoritesBar -bool false
+      #   defaults write com.apple.Safari "ShowFavoritesBar-v2" -bool false
+      # fi
+      # if ask "Enable Safari’s debug menu" Y; then
+      #   defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+      # fi
+      # if ask "Disable auto-playing video" Y; then
+      #   defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
+      #   defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
+      #   defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+      #   defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+      # fi
+      # if ask "Enable 'Do Not Track'" Y; then
+      #   defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+      # fi
+      #
+      # if ask "Enable the Develop menu and the Web Inspector in Safari" Y; then
+      #   defaults write com.apple.Safari IncludeDevelopMenu -bool true
+      #   defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+      #   defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+      # fi
+      # if ask "Increase page load speed in Safari" Y; then
+      #   defaults write com.apple.safari WebKitDNSPrefetchingEnabled -bool true
+      # fi
+      #
+      # if ask "Disable Data Detectors" Y; then
+      #   defaults write com.apple.Safari WebKitUsesEncodingDetector -bool false
+      # fi
+      # if ask "Enable developer menu in Safari" Y; then
+      #   defaults write com.apple.Safari IncludeDebugMenu -bool true
+      # fi
+
+
+      ###############################################################################
+      # Screen capture                                                              #
+      ###############################################################################
+
+
+
 
     dockitems_to_remove:
       - Microsoft Outlook
