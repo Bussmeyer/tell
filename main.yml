@@ -33,6 +33,7 @@
       - keeweb
       - licecap
       - michaelvillar-timer
+      - microsoft-azure-storage-explorer
       - microsoft-teams
       - musicbrainz-picard
       - openemu
@@ -75,6 +76,7 @@
       - vagrant
       - vmware-fusion
       - virtualbox
+      - visual-studio
       - webstorm
       - wireshark
       # install quick look plugins for all users
@@ -115,6 +117,7 @@
       - zsh
       - zsh-completions
     npm_packages:
+      - name: azure-functions-core-tools
       - name: grunt
     pip_packages:
       - name: virtualenv
