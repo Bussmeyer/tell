@@ -398,38 +398,38 @@
       # 10: Put display to sleep
       # 11: Launchpad
       # 12: Notification Center
-      # Top left screen corner → Desktop
+      # Top left screen corner
       - domain: 'com.apple.dock'
         key: 'wvous-tl-corner'
         type: int
-        value: 4
+        value: 2
       - domain: 'com.apple.dock'
         key: 'wvous-tl-modifier'
         type: int
         value: 0
-      # Top right screen corner → Mission Control
+      # Top right screen corner
       - domain: 'com.apple.dock'
         key: 'wvous-tr-corner'
         type: int
-        value: 2
+        value: 4
       - domain: 'com.apple.dock'
         key: 'wvous-tr-modifier'
         type: int
         value: 0
-      # Bottom left screen corner → Desktop
+      # Bottom left screen corner
       - domain: 'com.apple.dock'
         key: 'wvous-bl-corner'
         type: int
-        value: 4
+        value: 2
       - domain: 'com.apple.dock'
         key: 'wvous-bl-modifier'
         type: int
         value: 0
-      # Bottom right screen corner → Mission Control
+      # Bottom right screen corner
       - domain: 'com.apple.dock'
         key: 'wvous-br-corner'
         type: int
-        value: 2
+        value: 4
       - domain: 'com.apple.dock'
         key: 'wvous-br-modifier'
         type: int
