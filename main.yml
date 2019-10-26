@@ -107,6 +107,7 @@
       - htop
       - lzop
       - moreutils
+      - mitmproxy
       - mysql
       - nvm
       - python
