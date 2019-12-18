@@ -6,11 +6,11 @@
 
 - src: https://github.com/elliotweiser/ansible-osx-command-line-tools
   name: elliotweiser.osx-command-line-tools
-  version: "2.2.1"
+  version: "2.3.0"
 
 - src: https://github.com/geerlingguy/ansible-role-homebrew
   name: geerlingguy.homebrew
-  version: "3.0.0"
+  version: "3.1.0"
 
 - src: https://github.com/michaelrigart/ansible-role-hosts
   name: michaelrigart.hosts
@@ -18,4 +18,4 @@
 
 - src: https://github.com/viasite-ansible/ansible-role-zsh
   name: viasite-ansible.zsh
-  version: "v3.2.5"
+  version: "v3.2.6"
