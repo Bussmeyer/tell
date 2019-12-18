@@ -112,6 +112,7 @@
       - mysql
       - nvm
       - python
+      - python3
       - rbenv
       - rsync
       - sqlmap
