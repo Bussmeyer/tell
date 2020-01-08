@@ -82,7 +82,6 @@
       - visual-studio
       - visual-studio-code
       - webstorm
-      - wireshark
       # install quick look plugins for all users
       - qlcolorcode
       - qlstephen
