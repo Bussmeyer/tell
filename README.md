@@ -14,8 +14,8 @@ This playbook installs and configures most of the software we use on our Macbook
 ## Manual tasks and known bugs
 ### Permission error while installing zsh
 ```
-sudo chgrp -R staff ~/.antigen
-sudo chgrp staff ~/.zshrc
+sudo chgrp -R "LL\Domain Users" ~/.antigen
+sudo chgrp "LL\Domain Users" ~/.zshrc
 chsh -s /bin/zsh
 ```
 
