@@ -29,10 +29,8 @@
       - cisco-proximity
       - disk-inventory-x
       - drawio
-      - gimp
       - google-backup-and-sync
       - google-chrome
-      - keeweb
       - licecap
       - michaelvillar-timer
       - microsoft-azure-storage-explorer
@@ -63,7 +61,6 @@
       - istat-menus
       - iterm2
       - macdown
-      - mamp
       - pgadmin4
       - phpstorm
       - postman
@@ -73,15 +70,10 @@
       - slack
       - sourcetree
       - sublime-text
-      - tableau
-      - tableau-reader
       - table-tool
-      - vagrant
-      - vmware-fusion
       - virtualbox
       - visual-studio
       - visual-studio-code
-      - webstorm
       # install quick look plugins for all users
       - qlcolorcode
       - qlstephen
