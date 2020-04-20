@@ -607,15 +607,18 @@
       - name: iTerm
         path: "/Applications/iTerm.app"
         pos: 4
-      - name: Atom
-        path: "/Applications/Atom.app"
+      - name: Visual Studio Code
+        path: "/Applications/Visual Studio Code.app"
         pos: 5
+      - name: Sourcetree
+        path: "/Applications/Sourcetree.app"
+        pos: 6
       - name: Notes
         path: "/Applications/Notes.app"
-        pos: 6
+        pos: 7
       - name: Messages
         path: "/Applications/Messages.app"
-        pos: 7
+        pos: 8
     zsh_autosuggestions_bind_key: "^U"
     zsh_antigen_bundles_extras:
       - composer
