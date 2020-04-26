@@ -99,6 +99,7 @@
       - gnu-tar
       - htop
       - lzop
+      - mas
       - moreutils
       - mitmproxy
       - mysql
@@ -716,5 +717,9 @@
         - projects
     - name: Restart SystemUIServer e.g. show date in menu
       command: killall SystemUIServer
+      tags:
+        - osx
+    - name: Install things with mas - Mac App Store command-line interface
+      shell: mas install 1450640351 # Lightweight PDF
       tags:
         - osx
