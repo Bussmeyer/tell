@@ -25,7 +25,6 @@ chsh -s /bin/zsh
 ### Set up cloud drives
 - box-sync
 - google drive
-- ownCloud
 - iCloud
 
 ## Kudos
