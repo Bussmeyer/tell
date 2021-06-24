@@ -18,22 +18,22 @@ function exists {
 }
 
 function install_ansible {
-    PIP_VERSION=$(pip --version | cut -d' ' -f2 | cut -d. -f1)
+    PIP_VERSION=$(pip3 --version | cut -d' ' -f2 | cut -d. -f1)
 
-    if ! exists pip; then
+    if ! exists pip3; then
         setStatusMessage "Install PIP"
         sudo easy_install --quiet pip nose tornado
     else
         if [ "$PIP_VERSION" -lt 10 ]; then
-            sudo pip install nose tornado
+            sudo pip3 install nose tornado
             setStatusMessage "Update pip"
-            curl https://bootstrap.pypa.io/get-pip.py | sudo python
+            curl https://bootstrap.pypa.io/get-pip.py | sudo python3
         fi
     fi
     if ! exists ansible; then
         setStatusMessage "Install Ansible"
-        pip install --upgrade setuptools --user python
-        sudo pip install -q ansible
+        pip3 install --upgrade setuptools --user python
+        sudo pip3 install -q ansible
     fi
 }
 
