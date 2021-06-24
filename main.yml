@@ -17,27 +17,23 @@
     homebrew_taps:
       - azure/functions
       - homebrew/core
-      - caskroom/cask
-      - caskroom/versions
+      - homebrew/cask
+      - homebrew/cask-versions
       - codekitchen/dinghy
     homebrew_cask_apps:
       # install applications for all users
       - adobe-acrobat-reader
       - azure-data-studio
-      - box-sync
       - brave-browser
-      - cisco-proximity
       - disk-inventory-x
       - drawio
       - google-backup-and-sync
-      - google-chrome
       - licecap
       - michaelvillar-timer
       - microsoft-azure-storage-explorer
       - microsoft-teams
       - musicbrainz-picard
       - openemu
-      - owncloud
       - plex-media-player
       - sixtyforce
       - spectacle
@@ -49,25 +45,18 @@
       - vox-preferences-pane
       - yed
       - youtube-to-mp3
-      - zoomus
       # developer apps
-      - atom
       - cyberduck
       - db-browser-for-sqlite
-      - docker
       - keepassxc
-      - kitematic
       - imagealpha
       - imageoptim
       - istat-menus
       - iterm2
       - macdown
-      - pgadmin4
-      - phpstorm
       - postman
       - powershell
       - sequel-pro
-      - sketch
       - slack
       - sourcetree
       - sublime-text
