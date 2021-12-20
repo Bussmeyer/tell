@@ -11,7 +11,6 @@
     gem_packages: []
     composer_packages: []
     homebrew_taps:
-      - azure/functions
       - homebrew/core
       - homebrew/cask
       - homebrew/cask-versions
@@ -69,18 +68,14 @@
       - mitmproxy
       - mysql
       - nvm
-      - python
-      - python3
       - rbenv
       - rsync
       - sqlmap
       - tree
       - wget
-      - yarn
       - zsh
       - zsh-completions
-    npm_packages:
-      - name: azure-functions-core-tools
+    npm_packages: []
     pip_packages:
       - name: virtualenv
     osx_defaults:
@@ -491,103 +486,11 @@
         key: 'tilesize'
         type: float
         value: 32
-
-      ###############################################################################
-      # Safari & WebKit                                                             #
-      ###############################################################################
-      # if ask "Privacy: don’t send search queries to Apple" Y; then
-      #   defaults write com.apple.Safari UniversalSearchEnabled -bool false
-      #   defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-      # fi
-      #
-      # # if ask "Press Tab to highlight each item on a web page" N; then
-      # #   defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
-      # #   defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
-      # # fi
-      #
-      # if ask "Show the full URL in the address bar (note: this still hides the scheme)" Y; then
-      #   defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
-      # fi
-      # if ask "Hide Safari’s bookmarks bar by default" Y; then
-      #   defaults write com.apple.Safari ShowFavoritesBar -bool false
-      #   defaults write com.apple.Safari "ShowFavoritesBar-v2" -bool false
-      # fi
-      # if ask "Enable Safari’s debug menu" Y; then
-      #   defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-      # fi
-      # if ask "Disable auto-playing video" Y; then
-      #   defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
-      #   defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
-      #   defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
-      #   defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
-      # fi
-      # if ask "Enable 'Do Not Track'" Y; then
-      #   defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
-      # fi
-      #
-      # if ask "Enable the Develop menu and the Web Inspector in Safari" Y; then
-      #   defaults write com.apple.Safari IncludeDevelopMenu -bool true
-      #   defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-      #   defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-      # fi
-      # if ask "Increase page load speed in Safari" Y; then
-      #   defaults write com.apple.safari WebKitDNSPrefetchingEnabled -bool true
-      # fi
-      #
-      # if ask "Disable Data Detectors" Y; then
-      #   defaults write com.apple.Safari WebKitUsesEncodingDetector -bool false
-      # fi
-      # if ask "Enable developer menu in Safari" Y; then
-      #   defaults write com.apple.Safari IncludeDebugMenu -bool true
-      # fi
-
-
-      ###############################################################################
-      # Screen capture                                                              #
-      ###############################################################################
-
-
-
-
-    dockitems_to_remove:
-      - Microsoft Outlook
-      - Microsoft Word
-      - Microsoft Excel
-      - Microsoft PowerPoint
-      - Vorschau
-      - Lion Store
-      - Enterprise Connect
-      - Karten
-      - Fotos
-    dockitems_to_persist:
-      - name: Brave Browser
-        path: "/Applications/Brave Browser.app"
-        pos: 1
-      - name: Firefox
-        path: "/Applications/Firefox.app"
-        pos: 2
-      - name: Safari
-        path: "/Applications/Safari.app"
-        pos: 3
-      - name: iTerm
-        path: "/Applications/iTerm.app"
-        pos: 4
-      - name: Visual Studio Code
-        path: "/Applications/Visual Studio Code.app"
-        pos: 5
-      - name: Sourcetree
-        path: "/Applications/Sourcetree.app"
-        pos: 6
-      - name: Notes
-        path: "/Applications/Notes.app"
-        pos: 7
-      - name: Messages
-        path: "/Applications/Messages.app"
-        pos: 8
+  
+    dockitems_to_remove: []
+    dockitems_to_persist: []
     zsh_autosuggestions_bind_key: "^U"
     zsh_antigen_bundles_extras:
-      - composer
-      - git-flow
       - nvm
       - { name: osx, when: "{{ ansible_os_family == 'Darwin' }}" }
 
@@ -600,6 +503,7 @@
     - name: Remove all crap from Dock
       shell: dockutil --remove '{{ item }}'
       with_items: "{{ dockitems_to_remove }}"
+      become: yes
       tags:
         - osx
     - name: Check if items in dock exist
