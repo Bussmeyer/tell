@@ -19,11 +19,9 @@
       - homebrew/core
       - homebrew/cask
       - homebrew/cask-versions
-      - codekitchen/dinghy
     homebrew_cask_apps:
       # install applications for all users
       - adobe-acrobat-reader
-      - azure-data-studio
       - brave-browser
       - disk-inventory-x
       - drawio
@@ -31,21 +29,14 @@
       - licecap
       - logseq
       - michaelvillar-timer
-      - microsoft-azure-storage-explorer
-      - microsoft-teams
       - musicbrainz-picard
-      - obsidian
       - openemu
-      - plex-media-player
-      - sixtyforce
       - spectacle
       - spotify
-      - steam
       - the-unarchiver
       - vlc
       - vox
       - vox-preferences-pane
-      - yed
       - youtube-to-mp3
       # developer apps
       - cyberduck
@@ -53,15 +44,10 @@
       - keepassxc
       - imagealpha
       - imageoptim
-      - istat-menus
       - iterm2
-      - macdown
       - postman
-      - powershell
       - sequel-pro
-      - slack
       - sourcetree
-      - sublime-text
       - table-tool
       - virtualbox
       - visual-studio
@@ -77,13 +63,7 @@
       - webpquicklook
       - suspicious-package
     homebrew_installed_packages:
-      - composer
       - coreutils
-      - docker
-      - docker-compose
-      - docker-machine
-      - docker-machine-driver-xhyve
-      - dinghy
       - findutils
       - fzf
       - git
@@ -108,7 +88,6 @@
       - zsh-completions
     npm_packages:
       - name: azure-functions-core-tools
-      - name: grunt
     pip_packages:
       - name: virtualenv
     osx_defaults:
