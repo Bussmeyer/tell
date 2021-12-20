@@ -9,11 +9,7 @@
 
   vars:
     gem_packages: []
-    composer_packages:
-      - name: hirak/prestissimo
-      - name: drush/drush
-        version: '^8.1'
-      - name: squizlabs/php_codesniffer
+    composer_packages: []
     homebrew_taps:
       - azure/functions
       - homebrew/core
@@ -42,15 +38,12 @@
       - cyberduck
       - db-browser-for-sqlite
       - keepassxc
-      - imagealpha
       - imageoptim
       - iterm2
       - postman
       - sequel-pro
       - sourcetree
       - table-tool
-      - virtualbox
-      - visual-studio
       - visual-studio-code
       # install quick look plugins for all users
       - qlcolorcode
