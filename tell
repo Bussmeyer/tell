@@ -32,8 +32,7 @@ function install_ansible {
     fi
     if ! exists ansible; then
         setStatusMessage "Install Ansible"
-        pip3 install --upgrade setuptools --user python
-        sudo pip3 install -q ansible
+        python3 -m pip install --user ansible
     fi
 }
 
