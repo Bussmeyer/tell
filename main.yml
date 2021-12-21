@@ -18,6 +18,7 @@
       # install applications for all users
       - adobe-acrobat-reader
       - brave-browser
+      - deepl
       - disk-inventory-x
       - drawio
       - google-drive
