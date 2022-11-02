@@ -30,6 +30,7 @@
       - spectacle
       - spotify
       - the-unarchiver
+      - tomighty
       - vlc
       - vox
       - vox-preferences-pane
@@ -47,7 +48,6 @@
       - visual-studio-code
       # install quick look plugins for all users
       - qlcolorcode
-      - qlstephen
       - qlmarkdown
       - quicklook-json
       - qlprettypatch
@@ -493,7 +493,7 @@
     zsh_autosuggestions_bind_key: "^U"
     zsh_antigen_bundles_extras:
       - nvm
-      - { name: osx, when: "{{ ansible_os_family == 'Darwin' }}" }
+      - { name: macos, when: "{{ ansible_os_family == 'Darwin' }}" }
 
   tasks:
     - name: set mac defaults
