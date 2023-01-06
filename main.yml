@@ -17,7 +17,6 @@
     homebrew_cask_apps:
       # install applications for all users
       - adobe-acrobat-reader
-      - brave-browser
       - deepl
       - disk-inventory-x
       - drawio
@@ -48,7 +47,6 @@
       - visual-studio-code
       # install quick look plugins for all users
       - qlcolorcode
-      - qlmarkdown
       - quicklook-json
       - qlprettypatch
       - quicklook-csv
@@ -57,6 +55,7 @@
       - suspicious-package
     homebrew_installed_packages:
       - coreutils
+      - ddev
       - findutils
       - fzf
       - git
@@ -493,6 +492,7 @@
     zsh_autosuggestions_bind_key: "^U"
     zsh_antigen_bundles_extras:
       - nvm
+      - joel-porquet/zsh-dircolors-solarized
       - { name: macos, when: "{{ ansible_os_family == 'Darwin' }}" }
 
   tasks:
