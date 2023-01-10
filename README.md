@@ -22,6 +22,9 @@ chsh -s /bin/zsh
 ### Install ttmp32gme
 [Download ttmp32gme](https://github.com/thawn/ttmp32gme)
 
+### Install helpful apps
+- https://apps.apple.com/us/developer/sindre-sorhus/id328077650
+
 ### Set up cloud drives
 - box-sync
 - google drive
