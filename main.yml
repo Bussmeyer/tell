@@ -56,6 +56,7 @@
     homebrew_installed_packages:
       - coreutils
       - ddev
+      - dive
       - findutils
       - fzf
       - git
@@ -486,7 +487,7 @@
         key: 'tilesize'
         type: float
         value: 32
-  
+
     dockitems_to_remove: []
     dockitems_to_persist: []
     zsh_autosuggestions_bind_key: "^U"
@@ -579,7 +580,7 @@
         name: "{{ item.name | default(item) }}"
       with_items: "{{ pip_packages }}"
       tags:
-        - pip  
+        - pip
     - name: create ~/Projects directory
       file: path=~/Projects state=directory
       tags:
