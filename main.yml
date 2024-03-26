@@ -35,7 +35,6 @@
       - vox-preferences-pane
       - youtube-to-mp3
       # developer apps
-      - cyberduck
       - db-browser-for-sqlite
       - keepassxc
       - imageoptim
@@ -44,6 +43,7 @@
       - sequel-pro
       - sourcetree
       - table-tool
+      - timelapze
       - visual-studio-code
       # install quick look plugins for all users
       - qlcolorcode
@@ -56,6 +56,7 @@
     homebrew_installed_packages:
       - coreutils
       - ddev
+      - derailed/k9s/k9s
       - dive
       - findutils
       - fzf
