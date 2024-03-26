@@ -1,21 +1,12 @@
 ---
+roles:
+  - name: bussmeyer.dotfiles
+    src: https://github.com/Bussmeyer/ansible-role-dotfiles
+    version: "master"
 
-- src: https://github.com/Bussmeyer/ansible-role-dotfiles
-  name: bussmeyer.dotfiles
-  version: "master"
+  - name: elliotweiser.osx-command-line-tools
 
-- src: https://github.com/elliotweiser/ansible-osx-command-line-tools
-  name: elliotweiser.osx-command-line-tools
-  version: "2.3.0"
+  - name: viasite-ansible.zsh
 
-- src: https://github.com/geerlingguy/ansible-role-homebrew
-  name: geerlingguy.homebrew
-  version: "4.0.0"
-
-- src: https://github.com/michaelrigart/ansible-role-hosts
-  name: michaelrigart.hosts
-  version: "master"
-
-- src: https://github.com/viasite-ansible/ansible-role-zsh
-  name: viasite-ansible.zsh
-  version: "v3.5.2"
+collections:
+  - name: geerlingguy.mac

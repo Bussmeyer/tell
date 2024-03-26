@@ -1,0 +1,479 @@
+---
+#composer_packages: []
+
+homebrew_cask_apps:
+  - adobe-acrobat-reader
+  - db-browser-for-sqlite
+  - deepl
+  - disk-inventory-x
+  - drawio
+  - google-drive
+  - imageoptim
+  - iterm2
+  - keepassxc
+  - licecap
+  - logseq
+  - michaelvillar-timer
+  - musicbrainz-picard
+  - openemu
+  - postman
+  - qlcolorcode
+  - quicklook-json
+  - qlprettypatch
+  - quicklook-csv
+  - qlimagesize
+  - sequel-pro
+  - sourcetree
+  - spectacle
+  - spotify
+  - suspicious-package
+  - table-tool
+  - the-unarchiver
+  - timelapze
+  - tomighty
+  - visual-studio-code
+  - vlc
+  - vox
+  - vox-preferences-pane
+  - webpquicklook
+  - youtube-to-mp3
+
+homebrew_installed_packages:
+  - coreutils
+  - ddev
+  - derailed/k9s/k9s
+  - dive
+  - findutils
+  - fzf
+  - git
+  - git-extras
+  - gnu-tar
+  - htop
+  - lzop
+  - moreutils
+  - mysql
+  - nvm
+  - rsync
+  - sqlmap
+  - tree
+  - wget
+  - zsh
+  - zsh-completions
+
+mas_installed_apps:
+  - {id: 6463294724, name: "Muteem"}
+  - {id: 984929789, name: "Duplicate Photos Finder"}
+  - {id: 1450640351, name: "Lightweight PDF"}
+
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - 'App Store'
+
+dockitems_persist:
+  - name: "Logseq"
+    path: "/Applications/Logseq.app"
+    pos: 1
+
+  - name: "Firefox"
+    path: "/Applications/Firefox.app"
+    pos: 2
+
+  - name: "Microsoft Teams (work or school)"
+    path: "/Applications/Microsoft Teams (work or school).app"
+    pos: 3
+
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app"
+    pos: 4
+
+  - name: "Sourcetree"
+    path: "/Applications/Sourcetree.app"
+    pos: 5
+
+
+#npm_packages: []
+#pip_packages:
+#    - name: virtualenv
+osx_defaults:
+  - domain: 'com.apple.menuextra.clock'
+    key: 'DateFormat'
+    type: string
+    value: "EEE MMM d  h:mm a"
+
+#     ###############################################################################
+#     # to be clustered                                                             #
+#     ###############################################################################
+#     - domain: 'com.googlecode.iterm2'
+#     key: 'PromptOnQuit'
+#     type: bool
+#     value: false
+#     - domain: 'com.apple.desktopservices' # http://www.defaults-write.com/disable-the-creation-of-ds_store-files/
+#     key: 'DSDontWriteNetworkStores'
+#     type: boolean
+#     value: true
+#     - domain: 'com.apple.Safari'
+#     key: 'IncludeInternalDebugMenu'
+#     type: boolean
+#     value: true
+#     - domain: 'com.apple.Safari'
+#     key: 'IncludeDevelopMenu'
+#     type: boolean
+#     value: true
+#     - domain: 'com.apple.Safari'
+#     key: 'WebKitDeveloperExtrasEnabledPreferenceKey'
+#     type: boolean
+#     value: true
+#     - domain: 'com.apple.Safari'
+#     key: 'com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled'
+#     type: boolean
+#     value: true
+#     - domain: 'NSGlobalDomain'
+#     key: 'WebKitDeveloperExtras'
+#     type: boolean
+#     value: true
+
+#     ###############################################################################
+#     # General UI/UX                                                               #
+#     ###############################################################################
+#     - domain: 'com.apple.LaunchServices' # Turn off the 'Application Downloaded from Internet' quarantine warning
+#     key: 'LSQuarantine'
+#     type: bool
+#     value: false
+#     - domain: 'com.apple.screencapture'
+#     key: 'type'
+#     type: string
+#     value: png
+#     - domain: 'com.apple.screencapture'
+#     key: 'location'
+#     type: string
+#     value: "$HOME/Desktop"
+#     - domain: 'com.apple.print.PrintingPrefs' # Automatically quit printer app once the print jobs complete
+#     key: 'Quit When Finished'
+#     type: boolean
+#     value: true
+#     - domain: 'NSGlobalDomain'
+#     key: 'NSNavPanelExpandedStateForSaveMode'
+#     type: boolean
+#     value: true
+#     - domain: 'com.apple.CrashReporter' # Disable the crash reporter (quit dialog after an application crash) (default: 'crashreport')
+#     key: 'DialogType'
+#     type: string
+#     value: "none"
+#     - domain: 'NSGlobalDomain' # Disable automatic capitalization as it’s annoying when typing code
+#     key: 'NSAutomaticCapitalizationEnabled'
+#     type: bool
+#     value: false
+#     - domain: 'NSGlobalDomain' # Enable smart dashes as they’re annoying when typing code
+#     key: 'NSAutomaticDashSubstitutionEnabled'
+#     type: bool
+#     value: true
+#     - domain: 'NSGlobalDomain' # Disable automatic period substitution as it’s annoying when typing code
+#     key: 'NSAutomaticPeriodSubstitutionEnabled'
+#     type: bool
+#     value: false
+#     # Set the languages present
+#     - domain: 'NSGlobalDomain'
+#     key: 'NSLinguisticDataAssetsRequested'
+#     type: array
+#     value:
+#         - "en"
+#         - "de"
+#     # defaults delete NSGlobalDomain NSNavRecentPlaces
+#     # Set the some english acronyms/short forms for ease of typing
+#     - domain: 'NSGlobalDomain'
+#     key: 'NSUserDictionaryReplacementItems'
+#     type: array
+#     value:
+#         - '{ on = 1; replace = cyl; with = "Cya later!"; }'
+#         - '{ on = 1; replace = ttyl; with = "Talk to you later!"; }'
+#         - '{ on = 1; replace = omw; with = "On my way!"; }'
+#         - '{ on = 1; replace = omg; with = "Oh my God!"; }'
+
+#     ###############################################################################
+#     # Text Edit                                                                   #
+#     ###############################################################################
+#     # if ask "Use plain text mode for new TextEdit documents" Y; then
+#     #   defaults write com.apple.TextEdit RichText -int 0
+#     # fi
+#     #
+#     # if ask "Open and save files as UTF-8 in TextEdit" Y; then
+#     #   defaults write com.apple.TextEdit PlainTextEncoding -int 4
+#     #   defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+#     # fi
+
+#     ###############################################################################
+#     # Audio                                                                       #
+#     ###############################################################################
+#     # Increase sound quality for Bluetooth headphones/headsets
+#     - domain: 'com.apple.BluetoothAudioAgent'
+#     key: 'Apple Bitpool Min (editable)'
+#     type: int
+#     value: 40
+
+#     ###############################################################################
+#     # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+#     ###############################################################################
+#     # Enable Trackpad Gestures
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'Clicking'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'DragLock'
+#     type: int
+#     value: 0
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'Dragging'
+#     type: int
+#     value: 0
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadCornerSecondaryClick'
+#     type: int
+#     value: 0
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadFiveFingerPinchGesture'
+#     type: int
+#     value: 2
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadFourFingerHorizSwipeGesture'
+#     type: int
+#     value: 2
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadFourFingerPinchGesture'
+#     type: int
+#     value: 2
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadFourFingerVertSwipeGesture'
+#     type: int
+#     value: 2
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadHandResting'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadHorizScroll'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadMomentumScroll'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadPinch'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadRightClick'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadRotate'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadScroll'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadThreeFingerDrag'
+#     type: int
+#     value: 0
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadThreeFingerHorizSwipeGesture'
+#     type: int
+#     value: 2
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadThreeFingerTapGesture'
+#     type: int
+#     value: 0
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadThreeFingerVertSwipeGesture'
+#     type: int
+#     value: 2
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadTwoFingerDoubleTapGesture'
+#     type: int
+#     value: 1
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'TrackpadTwoFingerFromRightEdgeSwipeGesture'
+#     type: int
+#     value: 3
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'USBMouseStopsTrackpad'
+#     type: int
+#     value: 0
+#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+#     key: 'UserPreferences'
+#     type: int
+#     value: 1
+#     # Enable tap to click on trackpad
+#     - domain: 'NSGlobalDomain'
+#     key: 'com.apple.mouse.tapBehavior '
+#     type: int
+#     value: 1
+#     # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
+#     - domain: 'NSGlobalDomain'
+#     key: 'AppleKeyboardUIMode'
+#     type: int
+#     value: 3
+
+#     ###############################################################################
+#     # Finder                                                                      #
+#     ###############################################################################
+#     #  Use list view in all Finder windows by default
+#     # Four-letter codes for the other view modes: `clmv` (?), `icnv` (icon), `Nlsv` (list), `Flwv` (cover flow)
+#     - domain: 'com.apple.finder'
+#     key: 'FXPreferredViewStyle'
+#     type: string
+#     value: "Nlsv"
+#     - domain: 'com.apple.finder'
+#     key: 'SearchRecentsSavedViewStyle'
+#     type: string
+#     value: "Nlsv"
+#     - domain: 'com.apple.finder'
+#     key: 'QLEnableTextSelection'
+#     type: bool
+#     value: true
+#     # Set Desktop as the default location for new Finder windows use `PfHm`
+#     # For other paths, use `PfLo` and `file:///full/path/here/`
+#     - domain: 'com.apple.finder'
+#     key: 'NewWindowTarget'
+#     type: string
+#     value: "PfLo"
+#     - domain: 'com.apple.finder'
+#     key: 'NewWindowTargetPath'
+#     type: string
+#     value: "file:///Users/thobussm/"
+#     # Show status bar
+#     - domain: 'com.apple.finder'
+#     key: 'ShowStatusBar'
+#     type: bool
+#     value: true
+#     # Show path (breadcrumb) bar
+#     - domain: 'com.apple.finder'
+#     key: 'ShowPathbar'
+#     type: bool
+#     value: true
+#     # Display full POSIX path as Finder window title
+#     - domain: 'com.apple.finder'
+#     key: '_FXShowPosixPathInTitle'
+#     type: bool
+#     value: true
+#     # Show preview pane
+#     - domain: 'com.apple.finder'
+#     key: 'ShowPreviewPane'
+#     type: bool
+#     value: false
+#     # Allowing text selection in Quick Look/Preview in Finder by default
+#     - domain: 'com.apple.finder'
+#     key: 'QLEnableTextSelection'
+#     type: bool
+#     value: true
+#     # if ask "When performing a search, search the current folder by default (the default 'This Mac' is 'SCev')" Y; then
+#     #   defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+#     # fi
+#     #
+#     # if ask "Disable the warning when changing a file extension" Y; then
+#     #   defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+#     # fi
+#     #
+#     # # if ask "Enable spring loading for directories" Y; then
+#     #   # defaults write -g com.apple.springing.enabled -bool true
+#     # # fi
+#     #
+#     # if ask "Remove the delay for spring loading for directories" Y; then
+#     #   defaults write -g com.apple.springing.delay -float 0
+#     # fi
+#     #
+#     # if ask "Disable creation of Metadata Files on USB Volumes (avoids creation of .DS_Store and AppleDouble files.)" Y; then
+#     #   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+#     # fi
+#     # if ask "Empty Trash securely by default" Y; then
+#     #   defaults write com.apple.finder EmptyTrashSecurely -bool true
+#     # fi
+#     #
+#     # if ask "Show app-centric sidebar" Y; then
+#     #   defaults write com.apple.finder FK_AppCentricShowSidebar -bool true
+#     # fi
+#     # if ask "Show the '~/Library' folder" Y; then
+#     #   chflags nohidden ~/Library
+#     # fi
+#     #
+#     # if ask "Show the '/Volumes' folder" Y; then
+#     #   sudo chflags nohidden /Volumes
+#     # fi
+
+#     ###############################################################################
+#     # Dock, Dashboard, and hot corners                                            #
+#     ###############################################################################
+#     # Hot corners
+#     # Possible values:
+#     #  0: no-op
+#     #  2: Mission Control
+#     #  3: Show application windows
+#     #  4: Desktop
+#     #  5: Start screen saver
+#     #  6: Disable screen saver
+#     #  7: Dashboard
+#     # 10: Put display to sleep
+#     # 11: Launchpad
+#     # 12: Notification Center
+#     # Top left screen corner
+#     - domain: 'com.apple.dock'
+#     key: 'wvous-tl-corner'
+#     type: int
+#     value: 2
+#     - domain: 'com.apple.dock'
+#     key: 'wvous-tl-modifier'
+#     type: int
+#     value: 0
+#     # Top right screen corner
+#     - domain: 'com.apple.dock'
+#     key: 'wvous-tr-corner'
+#     type: int
+#     value: 4
+#     - domain: 'com.apple.dock'
+#     key: 'wvous-tr-modifier'
+#     type: int
+#     value: 0
+#     # Bottom left screen corner
+#     - domain: 'com.apple.dock'
+#     key: 'wvous-bl-corner'
+#     type: int
+#     value: 2
+#     - domain: 'com.apple.dock'
+#     key: 'wvous-bl-modifier'
+#     type: int
+#     value: 0
+#     # Bottom right screen corner
+#     - domain: 'com.apple.dock'
+#     key: 'wvous-br-corner'
+#     type: int
+#     value: 4
+#     - domain: 'com.apple.dock'
+#     key: 'wvous-br-modifier'
+#     type: int
+#     value: 0
+#     # Disable Mission Control
+#     - domain: 'com.apple.Dock'
+#     key: 'mcx-expose-disabled'
+#     type: bool
+#     value: false
+#     # Enable the 2D Dock
+#     - domain: 'com.apple.dock'
+#     key: 'no-glass'
+#     type: bool
+#     value: true
+#     - domain: 'com.apple.dock'
+#     key: 'launchanim'
+#     type: bool
+#     value: true
+
+# zsh_autosuggestions_bind_key: "^U"
+# zsh_antigen_bundles_extras:
+#   - nvm
+#   - joel-porquet/zsh-dircolors-solarized
+#   - { name: macos, when: "{{ ansible_os_family == 'Darwin' }}" }

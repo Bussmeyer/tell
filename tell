@@ -28,23 +28,27 @@ function install_ansible {
     fi
     if ! exists ansible; then
         setStatusMessage "Install Ansible"
-        export CRYPTOGRAPHY_SUPPRESS_LINK_FLAGS="1" 
+        export CRYPTOGRAPHY_SUPPRESS_LINK_FLAGS="1"
         export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
         export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
         # Ansible in PATH
         # https://stackoverflow.com/questions/63177609/zsh-command-not-found-ansible-after-pip-installing
-        export PATH="/Users/thobussm/Library/Python/3.8/bin:$PATH"
-        
+        export PATH="$HOME/Library/Python/3.11/bin:/opt/homebrew/bin:$PATH"
+
         # Brew in PATH
 	    export PATH="/usr/local/bin:$PATH"
 
         # unable to extract tar file though ansible unarchive module in macOS?
-        #export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH" 
+        #export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
         #export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
 
-        python3 -m pip install --user ansible
+        pip3 install ansible
     fi
+}
+
+function upgrade_ansible {
+    pip3 uninstall ansible-core
 }
 
 function install_ansible_roles {
@@ -57,6 +61,7 @@ function run_ansible_playbook {
     ansible-playbook main.yml -i inventory -K
 }
 
+#upgrade_ansible
 install_ansible
 install_ansible_roles
 run_ansible_playbook

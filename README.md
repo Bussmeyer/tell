@@ -11,6 +11,12 @@ This playbook installs and configures most of the software we use on our Macbook
 1. Run `$ ./tell` inside this directory.
 
 
+## Running a specific set of tagged tasks
+You can filter which part of the provisioning process to run by specifying a set of tags using ansible-playbook's --tags flag. The tags available are dotfiles, homebrew, mas, extra-packages and osx.
+```
+ansible-playbook main.yml -K --tags "dotfiles,homebrew"
+```
+
 ## Manual tasks and known bugs
 ### Permission error while installing zsh
 ```
@@ -34,3 +40,9 @@ Originally inspired by [superlumic/superlumic](https://github.com/superlumic/sup
 https://github.com/lafarer/ansible-role-osx-defaults and https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe for osx-defaults in a very structured way.
 
 https://github.com/geerlingguy/mac-dev-playbook
+
+
+
+
+https://macos-defaults.com/menubar/dateformat.html
+https://ansible.fontein.de/collections/community/general/osx_defaults_module.html

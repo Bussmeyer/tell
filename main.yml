@@ -1,596 +1,86 @@
 ---
-- hosts: all
-  connection: local
+- name: Configure host
+  hosts: all
 
   roles:
-    - bussmeyer.dotfiles
-    - geerlingguy.homebrew
-    - viasite-ansible.zsh
+    - role: elliotweiser.osx-command-line-tools
+    - role: bussmeyer.dotfiles
+    - role: geerlingguy.mac.homebrew
+      tags: ['homebrew']
+    - role: geerlingguy.mac.mas
+      when: mas_installed_apps or mas_installed_app_ids
+      tags: ['mas']
+    - role: geerlingguy.mac.dock
+      when: configure_dock
+      tags: ['dock']
+    - role: viasite-ansible.zsh
+      tags: ['zsh']
 
-  vars:
-    gem_packages: []
-    composer_packages: []
-    homebrew_taps:
-      - homebrew/core
-      - homebrew/cask
-      - homebrew/cask-versions
-    homebrew_cask_apps:
-      # install applications for all users
-      - adobe-acrobat-reader
-      - deepl
-      - disk-inventory-x
-      - drawio
-      - google-drive
-      - licecap
-      - logseq
-      - michaelvillar-timer
-      - musicbrainz-picard
-      - openemu
-      - spectacle
-      - spotify
-      - the-unarchiver
-      - tomighty
-      - vlc
-      - vox
-      - vox-preferences-pane
-      - youtube-to-mp3
-      # developer apps
-      - db-browser-for-sqlite
-      - keepassxc
-      - imageoptim
-      - iterm2
-      - postman
-      - sequel-pro
-      - sourcetree
-      - table-tool
-      - timelapze
-      - visual-studio-code
-      # install quick look plugins for all users
-      - qlcolorcode
-      - quicklook-json
-      - qlprettypatch
-      - quicklook-csv
-      - qlimagesize
-      - webpquicklook
-      - suspicious-package
-    homebrew_installed_packages:
-      - coreutils
-      - ddev
-      - derailed/k9s/k9s
-      - dive
-      - findutils
-      - fzf
-      - git
-      - git-extras
-      - gnu-tar
-      - htop
-      - lzop
-      - mas
-      - moreutils
-      - mitmproxy
-      - mysql
-      - nvm
-      - rbenv
-      - rsync
-      - sqlmap
-      - tree
-      - wget
-      - zsh
-      - zsh-completions
-    npm_packages: []
-    pip_packages:
-      - name: virtualenv
-    osx_defaults:
-      ###############################################################################
-      # MenuBar                                                                     #
-      ###############################################################################
-      - domain: 'com.apple.menuextra.clock'
-        key: 'DateFormat'
-        type: string
-        value: "EEE MMM d  h:mm a"
-      - domain: 'NSGlobalDomain'
-        key: 'AppleEnableMenuBarTransparency'
-        type: boolean
-        value: true
-      - domain: 'com.apple.menuextra.battery'
-        key: 'ShowPercent'
-        type: string
-        value: "YES"
-      - domain: 'com.apple.menuextra.battery'
-        key: 'ShowTime'
-        type: string
-        value: "NO"
-      - domain: 'com.apple.systemuiserver'
-        key: 'menuExtras'
-        type: array
-        value:
-          - "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
-          - "/System/Library/CoreServices/Menu Extras/AirPort.menu"
-          - "/System/Library/CoreServices/Menu Extras/Battery.menu"
-          - "/System/Library/CoreServices/Menu Extras/Clock.menu"
-          - "/System/Library/CoreServices/Menu Extras/User.menu"
-          - "/System/Library/CoreServices/Menu Extras/Volume.menu"
-
-      ###############################################################################
-      # to be clustered                                                             #
-      ###############################################################################
-      - domain: 'com.googlecode.iterm2'
-        key: 'PromptOnQuit'
-        type: bool
-        value: false
-      - domain: 'com.apple.desktopservices' # http://www.defaults-write.com/disable-the-creation-of-ds_store-files/
-        key: 'DSDontWriteNetworkStores'
-        type: boolean
-        value: true
-      - domain: 'com.apple.Safari'
-        key: 'IncludeInternalDebugMenu'
-        type: boolean
-        value: true
-      - domain: 'com.apple.Safari'
-        key: 'IncludeDevelopMenu'
-        type: boolean
-        value: true
-      - domain: 'com.apple.Safari'
-        key: 'WebKitDeveloperExtrasEnabledPreferenceKey'
-        type: boolean
-        value: true
-      - domain: 'com.apple.Safari'
-        key: 'com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled'
-        type: boolean
-        value: true
-      - domain: 'NSGlobalDomain'
-        key: 'WebKitDeveloperExtras'
-        type: boolean
-        value: true
-
-      ###############################################################################
-      # General UI/UX                                                               #
-      ###############################################################################
-      - domain: 'com.apple.LaunchServices' # Turn off the 'Application Downloaded from Internet' quarantine warning
-        key: 'LSQuarantine'
-        type: bool
-        value: false
-      - domain: 'com.apple.screencapture'
-        key: 'type'
-        type: string
-        value: png
-      - domain: 'com.apple.screencapture'
-        key: 'location'
-        type: string
-        value: "$HOME/Desktop"
-      - domain: 'com.apple.print.PrintingPrefs' # Automatically quit printer app once the print jobs complete
-        key: 'Quit When Finished'
-        type: boolean
-        value: true
-      - domain: 'NSGlobalDomain'
-        key: 'NSNavPanelExpandedStateForSaveMode'
-        type: boolean
-        value: true
-      - domain: 'com.apple.CrashReporter' # Disable the crash reporter (quit dialog after an application crash) (default: 'crashreport')
-        key: 'DialogType'
-        type: string
-        value: "none"
-      - domain: 'NSGlobalDomain' # Disable automatic capitalization as it’s annoying when typing code
-        key: 'NSAutomaticCapitalizationEnabled'
-        type: bool
-        value: false
-      - domain: 'NSGlobalDomain' # Enable smart dashes as they’re annoying when typing code
-        key: 'NSAutomaticDashSubstitutionEnabled'
-        type: bool
-        value: true
-      - domain: 'NSGlobalDomain' # Disable automatic period substitution as it’s annoying when typing code
-        key: 'NSAutomaticPeriodSubstitutionEnabled'
-        type: bool
-        value: false
-      # Set the languages present
-      - domain: 'NSGlobalDomain'
-        key: 'NSLinguisticDataAssetsRequested'
-        type: array
-        value:
-          - "en"
-          - "de"
-      # defaults delete NSGlobalDomain NSNavRecentPlaces
-      # Set the some english acronyms/short forms for ease of typing
-      - domain: 'NSGlobalDomain'
-        key: 'NSUserDictionaryReplacementItems'
-        type: array
-        value:
-          - '{ on = 1; replace = cyl; with = "Cya later!"; }'
-          - '{ on = 1; replace = ttyl; with = "Talk to you later!"; }'
-          - '{ on = 1; replace = omw; with = "On my way!"; }'
-          - '{ on = 1; replace = omg; with = "Oh my God!"; }'
-
-      ###############################################################################
-      # Text Edit                                                                   #
-      ###############################################################################
-      # if ask "Use plain text mode for new TextEdit documents" Y; then
-      #   defaults write com.apple.TextEdit RichText -int 0
-      # fi
-      #
-      # if ask "Open and save files as UTF-8 in TextEdit" Y; then
-      #   defaults write com.apple.TextEdit PlainTextEncoding -int 4
-      #   defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
-      # fi
-
-      ###############################################################################
-      # Audio                                                                       #
-      ###############################################################################
-      # Increase sound quality for Bluetooth headphones/headsets
-      - domain: 'com.apple.BluetoothAudioAgent'
-        key: 'Apple Bitpool Min (editable)'
-        type: int
-        value: 40
-
-      ###############################################################################
-      # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-      ###############################################################################
-      # Enable Trackpad Gestures
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'Clicking'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'DragLock'
-        type: int
-        value: 0
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'Dragging'
-        type: int
-        value: 0
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadCornerSecondaryClick'
-        type: int
-        value: 0
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadFiveFingerPinchGesture'
-        type: int
-        value: 2
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadFourFingerHorizSwipeGesture'
-        type: int
-        value: 2
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadFourFingerPinchGesture'
-        type: int
-        value: 2
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadFourFingerVertSwipeGesture'
-        type: int
-        value: 2
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadHandResting'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadHorizScroll'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadMomentumScroll'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadPinch'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadRightClick'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadRotate'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadScroll'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadThreeFingerDrag'
-        type: int
-        value: 0
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadThreeFingerHorizSwipeGesture'
-        type: int
-        value: 2
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadThreeFingerTapGesture'
-        type: int
-        value: 0
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadThreeFingerVertSwipeGesture'
-        type: int
-        value: 2
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadTwoFingerDoubleTapGesture'
-        type: int
-        value: 1
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'TrackpadTwoFingerFromRightEdgeSwipeGesture'
-        type: int
-        value: 3
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'USBMouseStopsTrackpad'
-        type: int
-        value: 0
-      - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-        key: 'UserPreferences'
-        type: int
-        value: 1
-      # Enable tap to click on trackpad
-      - domain: 'NSGlobalDomain'
-        key: 'com.apple.mouse.tapBehavior '
-        type: int
-        value: 1
-      # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
-      - domain: 'NSGlobalDomain'
-        key: 'AppleKeyboardUIMode'
-        type: int
-        value: 3
-
-      ###############################################################################
-      # Finder                                                                      #
-      ###############################################################################
-      #  Use list view in all Finder windows by default
-      # Four-letter codes for the other view modes: `clmv` (?), `icnv` (icon), `Nlsv` (list), `Flwv` (cover flow)
-      - domain: 'com.apple.finder'
-        key: 'FXPreferredViewStyle'
-        type: string
-        value: "Nlsv"
-      - domain: 'com.apple.finder'
-        key: 'SearchRecentsSavedViewStyle'
-        type: string
-        value: "Nlsv"
-      - domain: 'com.apple.finder'
-        key: 'QLEnableTextSelection'
-        type: bool
-        value: true
-      # Set Desktop as the default location for new Finder windows use `PfHm`
-      # For other paths, use `PfLo` and `file:///full/path/here/`
-      - domain: 'com.apple.finder'
-        key: 'NewWindowTarget'
-        type: string
-        value: "PfLo"
-      - domain: 'com.apple.finder'
-        key: 'NewWindowTargetPath'
-        type: string
-        value: "file:///Users/thobussm/"
-      # Show status bar
-      - domain: 'com.apple.finder'
-        key: 'ShowStatusBar'
-        type: bool
-        value: true
-      # Show path (breadcrumb) bar
-      - domain: 'com.apple.finder'
-        key: 'ShowPathbar'
-        type: bool
-        value: true
-      # Display full POSIX path as Finder window title
-      - domain: 'com.apple.finder'
-        key: '_FXShowPosixPathInTitle'
-        type: bool
-        value: true
-      # Show preview pane
-      - domain: 'com.apple.finder'
-        key: 'ShowPreviewPane'
-        type: bool
-        value: false
-      # Allowing text selection in Quick Look/Preview in Finder by default
-      - domain: 'com.apple.finder'
-        key: 'QLEnableTextSelection'
-        type: bool
-        value: true
-      # if ask "When performing a search, search the current folder by default (the default 'This Mac' is 'SCev')" Y; then
-      #   defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-      # fi
-      #
-      # if ask "Disable the warning when changing a file extension" Y; then
-      #   defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-      # fi
-      #
-      # # if ask "Enable spring loading for directories" Y; then
-      #   # defaults write -g com.apple.springing.enabled -bool true
-      # # fi
-      #
-      # if ask "Remove the delay for spring loading for directories" Y; then
-      #   defaults write -g com.apple.springing.delay -float 0
-      # fi
-      #
-      # if ask "Disable creation of Metadata Files on USB Volumes (avoids creation of .DS_Store and AppleDouble files.)" Y; then
-      #   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-      # fi
-      # if ask "Empty Trash securely by default" Y; then
-      #   defaults write com.apple.finder EmptyTrashSecurely -bool true
-      # fi
-      #
-      # if ask "Show app-centric sidebar" Y; then
-      #   defaults write com.apple.finder FK_AppCentricShowSidebar -bool true
-      # fi
-      # if ask "Show the '~/Library' folder" Y; then
-      #   chflags nohidden ~/Library
-      # fi
-      #
-      # if ask "Show the '/Volumes' folder" Y; then
-      #   sudo chflags nohidden /Volumes
-      # fi
-
-      ###############################################################################
-      # Dock, Dashboard, and hot corners                                            #
-      ###############################################################################
-      # Hot corners
-      # Possible values:
-      #  0: no-op
-      #  2: Mission Control
-      #  3: Show application windows
-      #  4: Desktop
-      #  5: Start screen saver
-      #  6: Disable screen saver
-      #  7: Dashboard
-      # 10: Put display to sleep
-      # 11: Launchpad
-      # 12: Notification Center
-      # Top left screen corner
-      - domain: 'com.apple.dock'
-        key: 'wvous-tl-corner'
-        type: int
-        value: 2
-      - domain: 'com.apple.dock'
-        key: 'wvous-tl-modifier'
-        type: int
-        value: 0
-      # Top right screen corner
-      - domain: 'com.apple.dock'
-        key: 'wvous-tr-corner'
-        type: int
-        value: 4
-      - domain: 'com.apple.dock'
-        key: 'wvous-tr-modifier'
-        type: int
-        value: 0
-      # Bottom left screen corner
-      - domain: 'com.apple.dock'
-        key: 'wvous-bl-corner'
-        type: int
-        value: 2
-      - domain: 'com.apple.dock'
-        key: 'wvous-bl-modifier'
-        type: int
-        value: 0
-      # Bottom right screen corner
-      - domain: 'com.apple.dock'
-        key: 'wvous-br-corner'
-        type: int
-        value: 4
-      - domain: 'com.apple.dock'
-        key: 'wvous-br-modifier'
-        type: int
-        value: 0
-      # Disable dashboard widgets (saves RAM)
-      - domain: 'com.apple.dashboard'
-        key: 'mcx-disabled'
-        type: bool
-        value: true
-      # Disable Mission Control
-      - domain: 'com.apple.Dock'
-        key: 'mcx-expose-disabled'
-        type: bool
-        value: false
-      # Enable the 2D Dock
-      - domain: 'com.apple.dock'
-        key: 'no-glass'
-        type: bool
-        value: true
-      - domain: 'com.apple.dock'
-        key: 'launchanim'
-        type: bool
-        value: true
-      - domain: 'com.apple.dock'
-        key: 'tilesize'
-        type: float
-        value: 32
-
-    dockitems_to_remove: []
-    dockitems_to_persist: []
-    zsh_autosuggestions_bind_key: "^U"
-    zsh_antigen_bundles_extras:
-      - nvm
-      - joel-porquet/zsh-dircolors-solarized
-      - { name: macos, when: "{{ ansible_os_family == 'Darwin' }}" }
+  vars_files:
+    - default.config.yml
 
   tasks:
     - name: set mac defaults
       osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
       with_items: "{{ osx_defaults }}"
-      tags:
-        - osx
-    - name: Remove all crap from Dock
-      shell: dockutil --remove '{{ item }}'
-      with_items: "{{ dockitems_to_remove }}"
-      become: yes
-      tags:
-        - osx
-    - name: Check if items in dock exist
-      shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
-      with_items: "{{ dockitems_to_persist }}"
-      tags:
-        - osx
-    - name: Fix order of items in dock
-      shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
-      with_items: "{{ dockitems_to_persist }}"
-      tags:
-        - osx
-    - name: create /tmp/powerline directory
-      file: path=/tmp/powerline state=directory
-      tags:
-        - shell
-    - name: git clone Powerline fonts repository
-      git: repo='https://github.com/powerline/fonts.git' dest=/tmp/powerline
-      tags:
-        - shell
-    - name: install script of Powerline fonts
-      command: /tmp/powerline/install.sh
-      tags:
-        - shell
-    - name: cleanup Powerline fonts installation
-      file: path=/tmp/powerline state=absent
-      tags:
-        - shell
-    - name: Import iTerm2 settings, incl. fonts
-      copy:
-        src: templates/com.googlecode.iterm2.plist
-        dest: ~/Library/Preferences/com.googlecode.iterm2.plist
-      tags:
-        - shell
-    - name: ".zshrc.local"
-      template:
-        src: templates/zshrc.local
-        dest: ~/.zshrc.local
-      tags:
-        - dotfiles
-    - name: Install global Composer packages.
-      composer:
-        command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
-        arguments: "{{ item.name | default(item) }} {{ item.version | default('@stable') }}"
-        # Ansible 2.4 supports `global_command` making `working_dir` optional.
-        working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
-      with_items: "{{ composer_packages }}"
-      tags:
-        - composer
-    - name: Install global Ruby gems.
-      gem:
-        name: "{{ item.name | default(item) }}"
-        state: "{{ item.state | default('present') }}"
-        version: "{{ item.version | default(omit) }}"
-        user_install: no
-        executable: "{{ item.executable | default(omit) }}"
-      with_items: "{{ gem_packages }}"
-      tags:
-        - gems
-    - name: Install global NPM packages.
-      npm:
-        name: "{{ item.name | default(item) }}"
-        state: "{{ item.state | default('present') }}"
-        version: "{{ item.version | default(omit) }}"
-        global: yes
-        executable: "{{ item.executable | default(omit) }}"
-      with_items: "{{ npm_packages }}"
-      tags:
-        - npm
-    - name: Install python packages.
-      pip:
-        name: "{{ item.name | default(item) }}"
-      with_items: "{{ pip_packages }}"
-      tags:
-        - pip
-    - name: create ~/Projects directory
-      file: path=~/Projects state=directory
-      tags:
-        - projects
+      tags: ['osx']
+#     - name: create /tmp/powerline directory
+#       file: path=/tmp/powerline state=directory
+#       tags:
+#         - shell
+#     - name: git clone Powerline fonts repository
+#       git: repo='https://github.com/powerline/fonts.git' dest=/tmp/powerline
+#       tags:
+#         - shell
+#     - name: install script of Powerline fonts
+#       command: /tmp/powerline/install.sh
+#       tags:
+#         - shell
+#     - name: cleanup Powerline fonts installation
+#       file: path=/tmp/powerline state=absent
+#       tags:
+#         - shell
+#     - name: Import iTerm2 settings, incl. fonts
+#       copy:
+#         src: templates/com.googlecode.iterm2.plist
+#         dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+#       tags:
+#         - shell
+#     - name: ".zshrc.local"
+#       template:
+#         src: templates/zshrc.local
+#         dest: ~/.zshrc.local
+#       tags:
+#         - dotfiles
+#     - name: Install global Composer packages.
+#       composer:
+#         command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
+#         arguments: "{{ item.name | default(item) }} {{ item.version | default('@stable') }}"
+#         # Ansible 2.4 supports `global_command` making `working_dir` optional.
+#         working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
+#       with_items: "{{ composer_packages }}"
+#       tags:
+#         - composer
+#     - name: Install global NPM packages.
+#       npm:
+#         name: "{{ item.name | default(item) }}"
+#         state: "{{ item.state | default('present') }}"
+#         version: "{{ item.version | default(omit) }}"
+#         global: yes
+#         executable: "{{ item.executable | default(omit) }}"
+#       with_items: "{{ npm_packages }}"
+#       tags:
+#         - npm
+#     - name: Install python packages.
+#       pip:
+#         name: "{{ item.name | default(item) }}"
+#       with_items: "{{ pip_packages }}"
+#       tags:
+#         - pip
+#     - name: create ~/Projects directory
+#       file: path=~/Projects state=directory
+#       tags:
+#         - projects
     - name: Restart SystemUIServer e.g. show date in menu
       command: killall SystemUIServer
-      tags:
-        - osx
-    - name: Install things with mas - Mac App Store command-line interface
-      shell: mas install 1450640351 # Lightweight PDF
-      tags:
-        - osx
+      tags: ['osx']
