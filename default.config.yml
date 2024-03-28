@@ -93,10 +93,15 @@ dockitems_persist:
     path: "/Applications/Sourcetree.app"
     pos: 5
 
+zsh_autosuggestions_bind_key: "^U"
+zsh_hotkeys_extras:
+  - { hotkey: '^[^[[D', action: backward-word } # alt+left
+  - { hotkey: '^[^[[C', action: forward-word } # alt+right
+zsh_antigen_bundles_extras:
+  - nvm
+  - joel-porquet/zsh-dircolors-solarized
+  - { name: macos, when: "{{ ansible_os_family == 'Darwin' }}" }
 
-#npm_packages: []
-#pip_packages:
-#    - name: virtualenv
 osx_defaults:
   - domain: 'com.apple.menuextra.clock'
     key: 'DateFormat'
@@ -162,35 +167,6 @@ osx_defaults:
 #     key: 'DialogType'
 #     type: string
 #     value: "none"
-#     - domain: 'NSGlobalDomain' # Disable automatic capitalization as it’s annoying when typing code
-#     key: 'NSAutomaticCapitalizationEnabled'
-#     type: bool
-#     value: false
-#     - domain: 'NSGlobalDomain' # Enable smart dashes as they’re annoying when typing code
-#     key: 'NSAutomaticDashSubstitutionEnabled'
-#     type: bool
-#     value: true
-#     - domain: 'NSGlobalDomain' # Disable automatic period substitution as it’s annoying when typing code
-#     key: 'NSAutomaticPeriodSubstitutionEnabled'
-#     type: bool
-#     value: false
-#     # Set the languages present
-#     - domain: 'NSGlobalDomain'
-#     key: 'NSLinguisticDataAssetsRequested'
-#     type: array
-#     value:
-#         - "en"
-#         - "de"
-#     # defaults delete NSGlobalDomain NSNavRecentPlaces
-#     # Set the some english acronyms/short forms for ease of typing
-#     - domain: 'NSGlobalDomain'
-#     key: 'NSUserDictionaryReplacementItems'
-#     type: array
-#     value:
-#         - '{ on = 1; replace = cyl; with = "Cya later!"; }'
-#         - '{ on = 1; replace = ttyl; with = "Talk to you later!"; }'
-#         - '{ on = 1; replace = omw; with = "On my way!"; }'
-#         - '{ on = 1; replace = omg; with = "Oh my God!"; }'
 
 #     ###############################################################################
 #     # Text Edit                                                                   #
@@ -471,9 +447,3 @@ osx_defaults:
 #     key: 'launchanim'
 #     type: bool
 #     value: true
-
-# zsh_autosuggestions_bind_key: "^U"
-# zsh_antigen_bundles_extras:
-#   - nvm
-#   - joel-porquet/zsh-dircolors-solarized
-#   - { name: macos, when: "{{ ansible_os_family == 'Darwin' }}" }

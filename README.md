@@ -46,3 +46,4 @@ https://github.com/geerlingguy/mac-dev-playbook
 
 https://macos-defaults.com/menubar/dateformat.html
 https://ansible.fontein.de/collections/community/general/osx_defaults_module.html
+https://coderwall.com/p/gfmwlw/fixing-arrow-keys-in-iterm-2

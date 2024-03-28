@@ -1,0 +1,22 @@
+---
+- name: create /tmp/powerline directory
+  file: path=/tmp/powerline state=directory
+
+- name: git clone Powerline fonts repository
+  git: repo='https://github.com/powerline/fonts.git' dest=/tmp/powerline
+
+- name: install script of Powerline fonts
+  command: /tmp/powerline/install.sh
+
+- name: cleanup Powerline fonts installation
+  file: path=/tmp/powerline state=absent
+
+#     - name: Import iTerm2 settings, incl. fonts
+#       copy:
+#         src: templates/com.googlecode.iterm2.plist
+#         dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+
+#     - name: ".zshrc.local"
+#       template:
+#         src: templates/zshrc.local
+#         dest: ~/.zshrc.local
