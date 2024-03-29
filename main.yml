@@ -20,9 +20,7 @@
     - default.config.yml
 
   tasks:
-    - name: set mac defaults
-      osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
-      with_items: "{{ osx_defaults }}"
+    - import_tasks: tasks/osx.yml
       tags: ['osx']
     - import_tasks: tasks/terminal.yml
       tags: ['zsh']
@@ -31,7 +29,3 @@
     - name: create ~/Projects directory
       file: path=~/Projects state=directory
       tags: ['projects']
-    # - name: Restart SystemUIServer e.g. show date in menu
-    #   command: killall SystemUIServer
-    #   tags: ['osx']
-

@@ -1,6 +1,4 @@
 ---
-#composer_packages: []
-
 homebrew_cask_apps:
   - adobe-acrobat-reader
   - db-browser-for-sqlite
@@ -61,17 +59,16 @@ homebrew_installed_packages:
   - zsh-completions
 
 mas_installed_apps:
-  - {id: 6463294724, name: "Muteem"}
-  - {id: 984929789, name: "Duplicate Photos Finder"}
-  - {id: 1450640351, name: "Lightweight PDF"}
+  - { id: 6463294724, name: "Muteem" }
+  - { id: 984929789, name: "Duplicate Photos Finder" }
+  - { id: 1450640351, name: "Lightweight PDF" }
 
 configure_dock: true
 dockitems_remove:
   - Launchpad
   - TV
   - Podcasts
-  - 'App Store'
-
+  - "App Store"
 dockitems_persist:
   - name: "Logseq"
     path: "/Applications/Logseq.app"
@@ -95,26 +92,31 @@ dockitems_persist:
 
 zsh_autosuggestions_bind_key: "^U"
 zsh_hotkeys_extras:
-  - { hotkey: '^[^[[D', action: backward-word } # alt+left
-  - { hotkey: '^[^[[C', action: forward-word } # alt+right
+  - { hotkey: "^[^[[D", action: backward-word } # alt+left
+  - { hotkey: "^[^[[C", action: forward-word } # alt+right
 zsh_antigen_bundles_extras:
   - nvm
   - joel-porquet/zsh-dircolors-solarized
   - { name: macos, when: "{{ ansible_os_family == 'Darwin' }}" }
 
 osx_defaults:
-  - domain: 'com.apple.menuextra.clock'
-    key: 'DateFormat'
+  - domain: "com.apple.menuextra.clock"
+    key: "DateFormat"
     type: string
     value: "EEE MMM d  h:mm a"
+  - domain: "com.googlecode.iterm2"
+    key: "PromptOnQuit"
+    type: bool
+    value: false
+  ###############################################################################
+  # Safari                                                                      #
+  ###############################################################################
+
+
 
 #     ###############################################################################
 #     # to be clustered                                                             #
 #     ###############################################################################
-#     - domain: 'com.googlecode.iterm2'
-#     key: 'PromptOnQuit'
-#     type: bool
-#     value: false
 #     - domain: 'com.apple.desktopservices' # http://www.defaults-write.com/disable-the-creation-of-ds_store-files/
 #     key: 'DSDontWriteNetworkStores'
 #     type: boolean
@@ -169,18 +171,6 @@ osx_defaults:
 #     value: "none"
 
 #     ###############################################################################
-#     # Text Edit                                                                   #
-#     ###############################################################################
-#     # if ask "Use plain text mode for new TextEdit documents" Y; then
-#     #   defaults write com.apple.TextEdit RichText -int 0
-#     # fi
-#     #
-#     # if ask "Open and save files as UTF-8 in TextEdit" Y; then
-#     #   defaults write com.apple.TextEdit PlainTextEncoding -int 4
-#     #   defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
-#     # fi
-
-#     ###############################################################################
 #     # Audio                                                                       #
 #     ###############################################################################
 #     # Increase sound quality for Bluetooth headphones/headsets
@@ -188,113 +178,6 @@ osx_defaults:
 #     key: 'Apple Bitpool Min (editable)'
 #     type: int
 #     value: 40
-
-#     ###############################################################################
-#     # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-#     ###############################################################################
-#     # Enable Trackpad Gestures
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'Clicking'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'DragLock'
-#     type: int
-#     value: 0
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'Dragging'
-#     type: int
-#     value: 0
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadCornerSecondaryClick'
-#     type: int
-#     value: 0
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadFiveFingerPinchGesture'
-#     type: int
-#     value: 2
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadFourFingerHorizSwipeGesture'
-#     type: int
-#     value: 2
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadFourFingerPinchGesture'
-#     type: int
-#     value: 2
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadFourFingerVertSwipeGesture'
-#     type: int
-#     value: 2
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadHandResting'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadHorizScroll'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadMomentumScroll'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadPinch'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadRightClick'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadRotate'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadScroll'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadThreeFingerDrag'
-#     type: int
-#     value: 0
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadThreeFingerHorizSwipeGesture'
-#     type: int
-#     value: 2
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadThreeFingerTapGesture'
-#     type: int
-#     value: 0
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadThreeFingerVertSwipeGesture'
-#     type: int
-#     value: 2
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadTwoFingerDoubleTapGesture'
-#     type: int
-#     value: 1
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'TrackpadTwoFingerFromRightEdgeSwipeGesture'
-#     type: int
-#     value: 3
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'USBMouseStopsTrackpad'
-#     type: int
-#     value: 0
-#     - domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
-#     key: 'UserPreferences'
-#     type: int
-#     value: 1
-#     # Enable tap to click on trackpad
-#     - domain: 'NSGlobalDomain'
-#     key: 'com.apple.mouse.tapBehavior '
-#     type: int
-#     value: 1
-#     # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
-#     - domain: 'NSGlobalDomain'
-#     key: 'AppleKeyboardUIMode'
-#     type: int
-#     value: 3
 
 #     ###############################################################################
 #     # Finder                                                                      #
