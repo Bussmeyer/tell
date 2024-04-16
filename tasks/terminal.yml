@@ -16,7 +16,7 @@
 #         src: templates/com.googlecode.iterm2.plist
 #         dest: ~/Library/Preferences/com.googlecode.iterm2.plist
 
-#     - name: ".zshrc.local"
-#       template:
-#         src: templates/zshrc.local
-#         dest: ~/.zshrc.local
+- name: "Add .zshrc.local"
+  template:
+    src: templates/zshrc.local
+    dest: ~/.zshrc.local

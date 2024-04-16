@@ -25,6 +25,9 @@ sudo chgrp "LL\Domain Users" ~/.zshrc
 chsh -s /bin/zsh
 ```
 
+In ~/.zshrc
+#alias fd=fdfind # for correct working of sorenson-axial/fzf-widgets auskommentieren
+
 ### Install ttmp32gme
 [Download ttmp32gme](https://github.com/thawn/ttmp32gme)
 
