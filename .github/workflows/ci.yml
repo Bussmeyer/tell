@@ -11,16 +11,8 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: '14'
-      - run: npm help
-      - name: Print versions
-        run: |
-          git --version
-          node --version
-          npm --version
-      - name: Install commitlint
-        run: |
-          npm ci
+          node-version: '21'
+      - run: npm ci
       - name: Validate current commit (last commit) with commitlint
         if: github.event_name == 'push'
         run: npx commitlint --last --verbose
