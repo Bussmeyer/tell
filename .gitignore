@@ -1,4 +1,5 @@
 .DS_Store
 *.retry
+node_modules
 roles*
 projects.yml
