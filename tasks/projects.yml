@@ -13,3 +13,8 @@
 
 - name: Create hint in directories
   file: path=~/Projects/Playground/all-things-that-could-be-deleted state=touch
+
+- name: Set project specific gitconfig includes
+  template:
+    src: templates/gitconfig_local
+    dest: ~/.gitconfig_local
