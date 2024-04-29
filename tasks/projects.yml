@@ -1,0 +1,15 @@
+---
+- name: Create ~/Projects directory
+  file: path=~/Projects state=directory
+
+- name: Create ~/Projects/Sources directory
+  file: path=~/Projects/Sources state=directory
+
+- name: Create ~/Projects/Work directory
+  file: path=~/Projects/Work state=directory
+
+- name: Create ~/Projects/Playground directory
+  file: path=~/Projects/Playground state=directory
+
+- name: Create hint in directories
+  file: path=~/Projects/Playground/all-things-that-could-be-deleted state=touch

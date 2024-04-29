@@ -26,6 +26,5 @@
       tags: ['zsh']
     - import_tasks: tasks/packages.yml
       tags: ['packages']
-    - name: create ~/Projects directory
-      file: path=~/Projects state=directory
+    - import_tasks: tasks/projects.yml
       tags: ['projects']

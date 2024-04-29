@@ -2,4 +2,3 @@
 *.retry
 node_modules
 roles*
-projects.yml
