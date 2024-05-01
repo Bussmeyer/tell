@@ -2,3 +2,5 @@
 *.retry
 node_modules
 roles*
+
+megalinter-reports/
