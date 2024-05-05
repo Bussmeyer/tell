@@ -11,11 +11,6 @@
 - name: cleanup Powerline fonts installation
   file: path=/tmp/powerline state=absent
 
-#     - name: Import iTerm2 settings, incl. fonts
-#       copy:
-#         src: templates/com.googlecode.iterm2.plist
-#         dest: ~/Library/Preferences/com.googlecode.iterm2.plist
-
 - name: "Add .zshrc.local"
   template:
     src: templates/zshrc.local

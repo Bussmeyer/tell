@@ -37,11 +37,11 @@ function install_ansible {
         export PATH="$HOME/Library/Python/3.11/bin:/opt/homebrew/bin:$PATH"
 
         # Brew in PATH
-	    export PATH="/usr/local/bin:$PATH"
+        export PATH="/usr/local/bin:$PATH"
 
         # unable to extract tar file though ansible unarchive module in macOS?
-        #export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-        #export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+        # export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+        # export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
 
         pip3 install ansible
     fi
