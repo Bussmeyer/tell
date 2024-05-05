@@ -18,3 +18,25 @@
   template:
     src: templates/gitconfig_local
     dest: ~/.gitconfig_local
+
+- name: Check if .gitconfig Work exists
+  stat:
+    path: "~/Projects/Work/.gitconfig"
+  register: gitconfig_file_work
+
+- name: Create .gitconfig Work if it doesn't exist
+  copy:
+    content: ""
+    dest: "~/Projects/Work/.gitconfig"
+  when: not gitconfig_file_work.stat.exists
+
+- name: Check if .gitconfig Sources exists
+  stat:
+    path: "~/Projects/Sources/.gitconfig"
+  register: gitconfig_file_sources
+
+- name: Create .gitconfig Sources if it doesn't exist
+  copy:
+    content: ""
+    dest: "~/Projects/Sources/.gitconfig"
+  when: not gitconfig_file_sources.stat.exists
