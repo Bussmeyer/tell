@@ -13,20 +13,23 @@ This playbook installs and configures most of the software we use on our Macbook
 
 ## Running a specific set of tagged tasks
 You can filter which part of the provisioning process to run by specifying a set of tags using ansible-playbook's --tags flag. The tags available are dotfiles, homebrew, mas, extra-packages and osx.
-```
+```sh
 ansible-playbook main.yml -K --tags "dotfiles,homebrew"
 ```
 
 ## Manual tasks and known bugs
 ### Permission error while installing zsh
-```
+```sh
 sudo chgrp -R "LL\Domain Users" ~/.antigen
 sudo chgrp "LL\Domain Users" ~/.zshrc
 chsh -s /bin/zsh
 ```
 
+### Fix annoying error in zsh
 In ~/.zshrc
+```sh
 # alias fd=fdfind # for correct working of sorenson-axial/fzf-widgets auskommentieren
+```
 
 ### Install ttmp32gme
 [Download ttmp32gme](https://github.com/thawn/ttmp32gme)
@@ -41,7 +44,6 @@ In ~/.zshrc
 ## Kudos
 Originally inspired by [superlumic/superlumic](https://github.com/superlumic/superlumic) and [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
 <https://github.com/lafarer/ansible-role-osx-defaults> and <https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe> for osx-defaults in a very structured way.
-
 
 <https://macos-defaults.com/menubar/dateformat.html>
 <https://ansible.fontein.de/collections/community/general/osx_defaults_module.html>
