@@ -116,6 +116,11 @@ osx_defaults:
     key: "PromptOnQuit"
     type: bool
     value: false
+
+composer_packages: []
+npm_packages: []
+pip_packages: []
+
   ###############################################################################
   # Safari                                                                      #
   ###############################################################################
