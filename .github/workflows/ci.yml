@@ -27,11 +27,10 @@ jobs:
 
     # Give the default GITHUB_TOKEN write permission to commit and push, comment
     # issues, and post new Pull Requests; remove the ones you do not need
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
+    # permissions:
+    #   contents: write
 
+    # add caching of docker image megaliter
     steps:
       - uses: actions/checkout@v4
         with:
@@ -67,7 +66,6 @@ jobs:
           # ADD YOUR CUSTOM ENV VARIABLES HERE TO OVERRIDE VALUES OF
           # .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
 
-      # Upload MegaLinter artifacts
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
         if: success() || failure()
