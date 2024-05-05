@@ -116,6 +116,16 @@ osx_defaults:
     key: "PromptOnQuit"
     type: bool
     value: false
+  # Set Desktop as the default location for new Finder windows use `PfHm`
+  # For other paths, use `PfLo`
+  - domain: 'com.apple.finder'
+    key: 'NewWindowTarget'
+    type: string
+    value: "PfLo"
+  - domain: 'com.apple.finder'
+    key: 'NewWindowTargetPath'
+    type: string
+    value: "file://${HOME}/"
 
 composer_packages: []
 npm_packages: []
@@ -206,16 +216,6 @@ pip_packages: []
 #     key: 'QLEnableTextSelection'
 #     type: bool
 #     value: true
-#     # Set Desktop as the default location for new Finder windows use `PfHm`
-#     # For other paths, use `PfLo` and `file:///full/path/here/`
-#     - domain: 'com.apple.finder'
-#     key: 'NewWindowTarget'
-#     type: string
-#     value: "PfLo"
-#     - domain: 'com.apple.finder'
-#     key: 'NewWindowTargetPath'
-#     type: string
-#     value: "file:///Users/thobussm/"
 #     # Show status bar
 #     - domain: 'com.apple.finder'
 #     key: 'ShowStatusBar'
