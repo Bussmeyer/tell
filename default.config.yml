@@ -118,12 +118,12 @@ osx_defaults:
     value: false
   # Set Desktop as the default location for new Finder windows use `PfHm`
   # For other paths, use `PfLo`
-  - domain: 'com.apple.finder'
-    key: 'NewWindowTarget'
+  - domain: "com.apple.finder"
+    key: "NewWindowTarget"
     type: string
     value: "PfLo"
-  - domain: 'com.apple.finder'
-    key: 'NewWindowTargetPath'
+  - domain: "com.apple.finder"
+    key: "NewWindowTargetPath"
     type: string
     value: "file://${HOME}/"
 
@@ -131,9 +131,9 @@ composer_packages: []
 npm_packages: []
 pip_packages: []
 
-  ###############################################################################
-  # Safari                                                                      #
-  ###############################################################################
+###############################################################################
+# Safari                                                                      #
+###############################################################################
 #     ###############################################################################
 #     # to be clustered                                                             #
 #     ###############################################################################

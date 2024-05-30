@@ -1,3 +1,4 @@
+---
 # Configuration file for MegaLinter
 #
 # See all available variables at https://megalinter.io/latest/config-file/ and in
@@ -14,7 +15,7 @@ APPLY_FIXES: none
 # default
 # ENABLE_LINTERS:
 DISABLE_LINTERS:
-- SPELL_CSPELL
+  - SPELL_CSPELL
 
 EXCLUDED_DIRECTORIES: [".git", "node_modules", "roles"]
 # DISABLE:
