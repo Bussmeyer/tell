@@ -18,6 +18,7 @@
   template:
     src: templates/gitconfig_local
     dest: ~/.gitconfig_local
+    mode: "0600"
 
 - name: Check if .gitconfig Work exists
   stat:
@@ -28,6 +29,7 @@
   copy:
     content: ""
     dest: "~/Projects/Work/.gitconfig"
+    mode: "0600"
   when: not gitconfig_file_work.stat.exists
 
 - name: Check if .gitconfig Sources exists
@@ -39,4 +41,5 @@
   copy:
     content: ""
     dest: "~/Projects/Sources/.gitconfig"
+    mode: "0600"
   when: not gitconfig_file_sources.stat.exists
