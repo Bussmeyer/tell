@@ -27,8 +27,8 @@ jobs:
 
     # Give the default GITHUB_TOKEN write permission to commit and push, comment
     # issues, and post new Pull Requests; remove the ones you do not need
-    # permissions:
-    #   contents: write
+    permissions:
+      contents: read
 
     # add caching of docker image megaliter
     steps:
