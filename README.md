@@ -34,6 +34,9 @@ In ~/.zshrc
 ### Install ttmp32gme
 [Download ttmp32gme](https://github.com/thawn/ttmp32gme)
 
+### Install Muteem
+https://apps.apple.com/us/app/muteem/id6463294724
+
 ### Install helpful apps
 - <https://apps.apple.com/us/developer/sindre-sorhus/id328077650>
 
