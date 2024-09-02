@@ -34,7 +34,7 @@ function install_ansible {
 
         # Ansible in PATH
         # https://stackoverflow.com/questions/63177609/zsh-command-not-found-ansible-after-pip-installing
-        export PATH="$HOME/Library/Python/3.11/bin:/opt/homebrew/bin:$PATH"
+        export PATH="$HOME/Library/Python/3.11/bin:/opt/homebrew/bin:$HOME/Library/Python/3.9/bin:$PATH"
 
         # Brew in PATH
         export PATH="/usr/local/bin:$PATH"
