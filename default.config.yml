@@ -38,7 +38,7 @@ homebrew_cask_apps:
 
 homebrew_installed_packages:
   - coreutils
-  - ddev
+  #- ddev
   - derailed/k9s/k9s
   - dive
   # Fix the iterm error caused by viasite-ansible.zsh
