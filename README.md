@@ -24,9 +24,13 @@ sudo chgrp -R "LL\Domain Users" ~/.antigen
 sudo chgrp "LL\Domain Users" ~/.zshrc
 chsh -s /bin/zsh
 ```
+### Run through p10k configuration
+```sh
+p10k configure
+````
 
 ### Fix annoying error in zsh
-In ~/.zshrc
+In ~/.zshrc.local
 ```sh
 # alias fd=fdfind # for correct working of sorenson-axial/fzf-widgets auskommentieren
 ```
