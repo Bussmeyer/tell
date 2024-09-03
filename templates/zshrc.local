@@ -2,6 +2,8 @@
 # https://stackoverflow.com/questions/27651892/homebrew-installs-nvm-but-nvm-cant-be-found-afterwards
 
 export NVM_DIR=~/.nvm
+export PATH="$HOME/Library/Python/3.11/bin:/opt/homebrew/bin:$HOME/Library/Python/3.9/bin:$PATH"
+
 source $(brew --prefix nvm)/nvm.sh
 
 alias fdfind=fd # for correct working of sorenson-axial/fzf-widgets
