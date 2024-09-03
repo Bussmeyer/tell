@@ -4,8 +4,6 @@
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-eval "$(rbenv init -)"
-
 alias fdfind=fd # for correct working of sorenson-axial/fzf-widgets
 
 # The next line updates PATH for the Google Cloud SDK.
