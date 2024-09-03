@@ -82,8 +82,8 @@ dockitems_persist:
     path: "/Applications/Firefox.app"
     pos: 2
 
-  - name: "Microsoft Teams (work or school)"
-    path: "/Applications/Microsoft Teams (work or school).app"
+  - name: "Microsoft Teams"
+    path: "/Applications/Microsoft Teams.app"
     pos: 3
 
   - name: "Visual Studio Code"
