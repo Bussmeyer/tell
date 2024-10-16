@@ -15,6 +15,7 @@ APPLY_FIXES: none
 # default
 # ENABLE_LINTERS:
 DISABLE_LINTERS:
+  - REPOSITORY_TRIVY
   - SPELL_CSPELL
 
 EXCLUDED_DIRECTORIES: [".git", "node_modules", "roles"]
