@@ -39,7 +39,7 @@ In ~/.zshrc.local
 [Download ttmp32gme](https://github.com/thawn/ttmp32gme)
 
 ### Install Muteem
-https://apps.apple.com/us/app/muteem/id6463294724
+<https://apps.apple.com/us/app/muteem/id6463294724>
 
 ### Install helpful apps
 - <https://apps.apple.com/us/developer/sindre-sorhus/id328077650>
@@ -49,8 +49,8 @@ https://apps.apple.com/us/app/muteem/id6463294724
 - google drive
 
 ### Install additional stuff
-- https://crawler.siteone.io/
-- https://addons.mozilla.org/de/firefox/addon/aria-devtools/
+- <https://crawler.siteone.io/>
+- <https://addons.mozilla.org/de/firefox/addon/aria-devtools/>
 
 ## Kudos
 Originally inspired by [superlumic/superlumic](https://github.com/superlumic/superlumic) and [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
