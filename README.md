@@ -48,6 +48,10 @@ https://apps.apple.com/us/app/muteem/id6463294724
 - box-sync
 - google drive
 
+### Install additional stuff
+- https://crawler.siteone.io/
+- https://addons.mozilla.org/de/firefox/addon/aria-devtools/
+
 ## Kudos
 Originally inspired by [superlumic/superlumic](https://github.com/superlumic/superlumic) and [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
 <https://github.com/lafarer/ansible-role-osx-defaults> and <https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe> for osx-defaults in a very structured way.
