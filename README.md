@@ -54,8 +54,7 @@ https://apps.apple.com/us/app/muteem/id6463294724
 
 ## Kudos
 Originally inspired by [superlumic/superlumic](https://github.com/superlumic/superlumic) and [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
-<https://github.com/lafarer/ansible-role-osx-defaults> and <https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe> for osx-defaults in a very structured way.
+<https://github.com/lafarer/ansible-role-osx-defaults>
 
 <https://macos-defaults.com/menubar/dateformat.html>
-<https://ansible.fontein.de/collections/community/general/osx_defaults_module.html>
 <https://coderwall.com/p/gfmwlw/fixing-arrow-keys-in-iterm-2>
